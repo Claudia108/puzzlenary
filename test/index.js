@@ -1,19 +1,18 @@
+//
 import chai from "chai";
 import $ from "jquery";
 import View from '../lib/view';
 
-const assert = chai.assert;
+const expect = chai.expect;
 
 describe('my test suite', function () {
-  it('should work', function () {
-    assert(true);
-  });
-
-  it("renders a game", function() {
+  it("renders a game canvas", function() {
     const gameInstance = new View("game-canvas");
 
-    gameInstance.render();
+    var instance = gameInstance.render();
 
-    assert.equal($(".game").length, 1);
+    expect(instance).to.be.true;
   });
+
+  
 });
