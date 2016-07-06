@@ -1,6 +1,9 @@
 module.exports = {
   entry: {
-    main: "./lib/index.js",
+    main: [
+      "./lib/view.js",
+      "./lib/index.js"
+    ],
     test: "mocha!./test/index.js"
   },
   output: {
