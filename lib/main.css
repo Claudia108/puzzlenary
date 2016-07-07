@@ -2,24 +2,38 @@ html {
   background-color: teal;
 }
 
-#game-canvas {
-  margin-top: 5%;
-  background-color: white;
-  margin-left: 40%;
-  box-shadow: 1px 1px 50px white;
-  border-radius: 10px;
+#container {
+  position: relative;
 }
 
-.game-canvas { margin:1em auto; border-collapse:collapse }
+#game-canvas {
+  /*margin-top: 5%;*/
+  background-color: white;
+  /*margin-left: 40%;*/
+  box-shadow: 1px 1px 50px white;
+  /*border-radius: 10px;*/
+  position: absolute;
+  z-index: -1;
+}
 
-.game-canvas td {
+.game-table {
+  position:absolute;
+  margin:1em auto;
+  border-collapse:collapse;
+  width: 400px;
+  height: 400px;
+  z-index: 2;
+  }
+
+.game-table td {
     cursor:pointer;
     width:30px; height:30px;
     border:1px solid #ccc;
+    background-color: blue;
     text-align:center;
     font-family:sans-serif; font-size:13px
 }
-.game-canvas td.clicked {
-    background-color:yellow;
+.game-table td.clicked {
+    background-color:transparent;
     font-weight:bold; color:red;
 }
