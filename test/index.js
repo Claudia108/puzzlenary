@@ -3,6 +3,7 @@ import chai from "chai";
 import $ from "jquery";
 import View from '../lib/view';
 import Grid from '../lib/grid';
+require('./grid-test')
 
 const expect = chai.expect;
 
