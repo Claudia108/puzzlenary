@@ -14,15 +14,21 @@ html {
   /*border-radius: 10px;*/
   position: absolute;
   z-index: -1;
+  background-image: url('../assets/images/pig_troll.jpg');
 }
 
 .game-table {
   position:absolute;
-  margin:1em auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   border-collapse:collapse;
-  width: 400px;
-  height: 400px;
+  width: 405px;
+  height: 405px;
   z-index: 2;
+  border-color: black;
+  border-style: solid;
+  border-weight: 40px;
+  border-width: thick;
   }
 
 .game-table td {
