@@ -19,8 +19,8 @@ describe('grid', function () {
 
     it('has columns and rows', function () {
 
-      const cols = 3;
-      const ros = 3;
+      const tr = 10;
+      const td = 3;
       const grid = new Grid({columns: 3, rows: 3});
       expect(grid.columns.length).to.equal(3);
       expect(grid.rows.length).to.equal(3);

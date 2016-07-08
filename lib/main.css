@@ -3,24 +3,43 @@ html {
 }
 
 #container {
+  width: 395px;
+  height: 399px;
   position: relative;
+  margin-left: 30%;
+  display: initial;
+  z-index: -1;
 }
 
-#game-canvas {
+
+
+img {
+  width: 405px;
+  height: 396px;
+  margin-top: 18px;
+
+  /*margin-left: 30%;*/
+  /*text-align: center;*/
+
+  /*margin: auto;*/
   /*margin-top: 5%;*/
-  background-color: white;
+  /*background-color: white;*/
   /*margin-left: 40%;*/
   box-shadow: 1px 1px 50px white;
   /*border-radius: 10px;*/
   position: absolute;
-  z-index: -1;
-  background-image: url('../assets/images/pig_troll.jpg');
+  /*z-index: -1;*/
+  overflow: hidden;
+  object-fit: contain;
+
+  /*background-image: url('../assets/images/pig_troll.jpg');*/
 }
 
 .game-table {
-  position:absolute;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  position:relative;
+  margin-left: 30%;
+  /*margin: auto;*/
+  /*text-align: center;*/
   border-collapse:collapse;
   width: 405px;
   height: 405px;
@@ -35,7 +54,7 @@ html {
     cursor:pointer;
     width:30px; height:30px;
     border:1px solid #ccc;
-    background-color: blue;
+    background-color: purple;
     text-align:center;
     font-family:sans-serif; font-size:13px
 }

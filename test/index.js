@@ -13,8 +13,7 @@ describe('my test suite', function () {
 
     var instance = gameInstance.render();
 
-    expect(instance).to.be.true;
-  });
+    expect(instance).to.be.true;  });
 
   // Box WIP test:
   // it('box', function() {
