@@ -11,35 +11,19 @@ html {
   z-index: -1;
 }
 
-
-
 img {
   width: 405px;
   height: 396px;
   margin-top: 18px;
-
-  /*margin-left: 30%;*/
-  /*text-align: center;*/
-
-  /*margin: auto;*/
-  /*margin-top: 5%;*/
-  /*background-color: white;*/
-  /*margin-left: 40%;*/
   box-shadow: 1px 1px 50px white;
-  /*border-radius: 10px;*/
   position: absolute;
-  /*z-index: -1;*/
   overflow: hidden;
   object-fit: contain;
-
-  /*background-image: url('../assets/images/pig_troll.jpg');*/
 }
 
 .game-table {
   position:relative;
   margin-left: 30%;
-  /*margin: auto;*/
-  /*text-align: center;*/
   border-collapse:collapse;
   width: 405px;
   height: 405px;
@@ -52,13 +36,14 @@ img {
 
 .game-table td {
     cursor:pointer;
-    width:30px; height:30px;
+    width:30px;
+    height:30px;
     border:1px solid #ccc;
     background-color: purple;
     text-align:center;
-    font-family:sans-serif; font-size:13px
+    font-family:sans-serif;
+    font-size:13px
 }
 .game-table td.clicked {
     background-color:transparent;
-    font-weight:bold; color:red;
 }
