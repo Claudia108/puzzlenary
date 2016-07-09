@@ -10,14 +10,15 @@
     <!-- <canvas id="game-canvas" width="399" height="395"></canvas> -->
   </div>
   <script src="main.bundle.js"></script>
+  <!-- <script src="toggler.bundle.js"></script> -->
 
   <script type="text/javascript">
       function classToggler(td) {
         // debugger;
         var className = td.getAttribute("class");
         console.log(td.id);
-        if(className==="normal") {
-          td.className = "active";
+        if(className==="initial") {
+          td.className = "initial";
         }
         else if (className==="forbidden") {
           alert("no bueno");
