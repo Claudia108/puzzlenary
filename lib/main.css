@@ -47,3 +47,19 @@ img {
 .game-table td.clicked {
     background-color:transparent;
 }
+
+.initial {
+  background-color: blue;
+}
+
+.forbidden {
+  background-color: red;
+}
+
+.active {
+  background-color: green;
+}
+
+.transparent {
+  background-color: transparent;
+}
