@@ -44,6 +44,18 @@ img {
     font-family:sans-serif;
     font-size:13px
 }
+
+.game-table td.unclicked {
+  background-color: blue;
+}
 .game-table td.clicked {
-    background-color:transparent;
+    background-color: transparent;
+}
+
+.game-table td.active {
+  background-color: green;
+}
+
+.game-table td.forbidden {
+  background-color: red;
 }
