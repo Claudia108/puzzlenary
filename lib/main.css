@@ -59,3 +59,7 @@ img {
 .game-table td.forbidden {
   background-color: red;
 }
+
+.game-table td.initial {
+  background-color: purple;
+}
