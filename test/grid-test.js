@@ -1,43 +1,29 @@
 import chai from "chai";
-import $ from "jquery";
-import View from '../lib/view';
-// import Grid from '../lib/grid';
-// require('../lib/grid');
+// import chaijQuery from "chai-jquery";
+import $ from 'jquery';
+import Grid from '../lib/grid';
 const expect = chai.expect;
-const Grid = require('../lib/grid')
+// const expectjQuery = chaijQuery;
 
 describe('grid', function () {
   context('contains attributes', function () {
-    const grid = new Grid({});
-    // it('has image', function () {
-    //   const image = '/images/...png';
-    //   const grid = new Grid(image);
-    //
-    //   expect(grid.image).to.eql(image);
-    //   // expect(grid.boxes[0]).to.kindOf(Box);
-    // });
-
     it('has columns and rows', function () {
+      const grid = new Grid({});
 
-      const tr = 10;
-      const td = 3;
-      const grid = new Grid({columns: 3, rows: 3});
-      expect(grid.columns.length).to.equal(3);
-      expect(grid.rows.length).to.equal(3);
-      // expect(grid.squares.length).to.eql(9);
+      expect(grid).to.have.property('columns');
+      expect(grid).to.have.property('rows');
+      expect(grid).to.have.property('cellArray');
     });
 
-    // it('each grid square has x and y coordinates', function () {
-    //   const grid = new Grid(9);
-    //
-    // })
+    it('adds number of cells to array', function () {
+      const grid = new Grid({
+        columns: 5,
+        rows: 5
+      });
+      grid.buildGrid();
 
-    // it('matches number of grid squares with number of added boxes', function () {
-    //   const numberOfElements = 9;
-    //   const grid = new Grid(numberOfElements);
-    //   grid.fillWithBoxes();
-    //
-    //   expect(grid.boxes.length).to.eql(numberOfElements);
-    // });
+      expect(grid.cellArray).to.be.an.instanceof(Array);
+      expect(grid.cellArray.length).to.equal(25);
+    });
   });
 });
