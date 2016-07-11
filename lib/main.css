@@ -45,17 +45,30 @@ img {
     font-size:13px
 }
 
-.game-table td.unclicked {
-  background-color: blue;
-}
 .game-table td.clicked {
     background-color: transparent;
 }
 
-.game-table td.active {
-  background-color: green;
+.game-table td.highlighted-1 {
+    background-color: green;
 }
 
-.game-table td.forbidden {
+.game-table td.highlighted-2 {
   background-color: red;
+}
+
+.game-table td.highlighted-3 {
+  background-color: blue;
+}
+
+.game-table td.highlighted-4 {
+  background-color: purple;
+}
+
+.game-table td.highlighted-5 {
+  background-color: yellow;
+}
+
+.game-table td.highlighted-6 {
+  background-color: orange;
 }
