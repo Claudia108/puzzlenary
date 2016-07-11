@@ -10,13 +10,15 @@ describe('helpers', function () {
       let cellTwo = new Cell(2);
       let cellId = 1;
       let cellArray = [cellOne, cellTwo];
+
       expect(cellArray.length).to.equal(2);
 
       Helpers.endPlayArray(cellId, cellArray);
+
+      expect(cellArray.length).to.equal(1);
       expect(cellArray).to.eql([cellTwo]);
-      // expect(cellArray.length).to.equal(1);
-      // expect(cellArray).to.contain(cellTwo);
-      // expect(cellArray).to.not.contain(cellOne);
+      expect(cellArray).to.contain(cellTwo);
+      expect(cellArray).to.not.contain(cellOne);
     });
   });
 });
