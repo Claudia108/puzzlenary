@@ -50,10 +50,11 @@ h2 {
 }
 
 .peaker {
-  position: relative;
+  position: absolute;;
   margin-left: 87px;
   z-index: -2;
-  top: -400px;
+  top: 0px;
+
   height: 500px;
 
 }
