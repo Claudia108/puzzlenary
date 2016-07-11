@@ -1,5 +1,6 @@
 import chai from 'chai';
-const Helpers = require('../lib/helpers.js');
+const endPlayArray = require('../lib/helpers.js');
+const classToggler = require('../lib/helpers.js');
 import Cell from '../lib/cell';
 const expect = chai.expect;
 
@@ -13,7 +14,7 @@ describe('helpers', function () {
 
       expect(cellArray.length).to.equal(2);
 
-      Helpers.endPlayArray(cellId, cellArray);
+      endPlayArray(cellId, cellArray);
 
       expect(cellArray.length).to.equal(1);
       expect(cellArray).to.eql([cellTwo]);
