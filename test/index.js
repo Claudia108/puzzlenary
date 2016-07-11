@@ -1,9 +1,10 @@
-//
 import chai from "chai";
-import $ from "jquery";
-import View from '../lib/view';
-import Grid from '../lib/grid';
+// import $ from "jquery";
+// import View from '../lib/view';
+// import Grid from '../lib/grid';
 require('./grid-test');
+require('./helpers-test');
+require('./cell-test');
 
 const expect = chai.expect;
 
