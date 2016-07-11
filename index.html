@@ -5,10 +5,38 @@
   <title>Game Time</title>
 </head>
 <body>
-  <div id="container">
-    <img src="./assets/images/pig_troll_sq.jpg" alt="pig-troll">
-    <!-- <canvas id="game-canvas" width="399" height="395"></canvas> -->
+    <!-- Trigger/Open The Modal -->
+  <!-- <button id="myBtn">Open Modal</button> -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+      <div class="start-screen">
+        <h2>Welcome to Trolly Poozleh!</h2>
+        <!-- <div class="title-image"> -->
+          <img id="troll-face" src="./assets/images/troll_face.jpg" alt="troll-face">
+        <!-- </div> -->
+        <div id="instructions">
+          <!-- <h4>Instructions</h4> -->
+          <p>Click on green squares!</p>
+          <p>You start with 3 lives.  Click on the color of death (red) and you'll lose one!  Don't kill your troll!</p>
+        </div>
+        <button style="button" class="btn btn-danger start-button close">Start the Game</button>
+
+
+      <!-- <p>Some text in the Modal..</p> -->
+    </div>
+
   </div>
+
+  <div id="container">
+    <img class="level-image" src="./assets/images/pig_troll_sq.jpg" alt="pig-troll">
+  </div>
+
   <script src="main.bundle.js"></script>
+  <div class="peaker">    
+    <img class="background-image" src="./assets/images/troll_png.png" alt="peak">
+  </div>
 </body>
 </html>
