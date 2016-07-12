@@ -5,38 +5,42 @@
   <title>Game Time</title>
 </head>
 <body>
-    <!-- Trigger/Open The Modal -->
-  <!-- <button id="myBtn">Open Modal</button> -->
+<link href="https://fonts.googleapis.com/css?family=Galada|Monoton" rel="stylesheet">
+  <!-- The Start Game Modal -->
+  <!-- <div id="myModal" class="modal">
+    <div class="start-screen">
+      <h2 class="monoton">Welcome to Trolly Poozleh!</h2>
+        <img class="clip-animation" id="troll-face" src="./assets/images/troll_face.jpg" alt="troll-face">
+      <div id="instructions">
+        <h3 class="galada">Click on green squares!</h3>
+        <h3 class="galada">You start with 3 lives.  Click on the color of death (red) and you'll lose one!  Don't kill your troll!</h3>
+      </div>
+      <button style="button" class="btn btn-danger start-button start">Start the Game</button>
+    </div>
+  </div> -->
 
-  <!-- The Modal -->
-  <div id="myModal" class="modal">
+  <!-- The End Game Modal -->
+  <div id="endGameModal" class="modal">
 
-    <!-- Modal content -->
-      <div class="start-screen">
-        <h2>Welcome to Trolly Poozleh!</h2>
-        <!-- <div class="title-image"> -->
-          <img id="troll-face" src="./assets/images/troll_face.jpg" alt="troll-face">
-        <!-- </div> -->
-        <div id="instructions">
-          <!-- <h4>Instructions</h4> -->
-          <p>Click on green squares!</p>
-          <p>You start with 3 lives.  Click on the color of death (red) and you'll lose one!  Don't kill your troll!</p>
-        </div>
-        <button style="button" class="btn btn-danger start-button close">Start the Game</button>
-
-
-      <!-- <p>Some text in the Modal..</p> -->
+    <div class="start-screen">
+      <h2 class="monoton">Game Over!</h2>
+        <img class="pony" id="sad-pony" src="./assets/images/sad_pony.png" alt="sad-pony">
+      <div id="instructions">
+        <h3 class="galada">You killed all three trolls.  Sad.</h3>
+      </div>
+      <button style="button" class="btn btn-danger start-button close monoton">New Game</button>
     </div>
 
   </div>
 
-  <div id="container">
+  <div id="container" class="home">
     <img class="level-image" src="./assets/images/pig_troll_sq.jpg" alt="pig-troll">
   </div>
 
   <script src="main.bundle.js"></script>
-  <div class="peaker">    
-    <img class="background-image" src="./assets/images/troll_png.png" alt="peak">
+  <div class="peaker">
+    <img class="background-image" src="./assets/images/troll_png.png" alt="peaker">
   </div>
+
 </body>
 </html>
