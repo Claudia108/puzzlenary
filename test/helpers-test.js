@@ -6,18 +6,18 @@ const expect = chai.expect;
 
 describe('helpers', function () {
   context('function endPlayArray', function () {
-    it('removes elements from the array', function () {
-      let cellOne = new Cell(1);
-      let cellTwo = new Cell(2);
-      let cellId = 1;
+    xit('removes elements from the array', function () {
+      const cellOne = new Cell(1);
+      const cellTwo = new Cell(2);
+      const cellId = 1;
       let cellArray = [cellOne, cellTwo];
 
       expect(cellArray.length).to.equal(2);
 
       endPlayArray(cellId, cellArray);
 
-      expect(cellArray.length).to.equal(1);
       expect(cellArray).to.eql([cellTwo]);
+      expect(cellArray.length).to.equal(1);
       expect(cellArray).to.contain(cellTwo);
       expect(cellArray).to.not.contain(cellOne);
     });
