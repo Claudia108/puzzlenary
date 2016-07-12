@@ -5,10 +5,56 @@
   <title>Game Time</title>
 </head>
 <body>
-  <div id="container">
-    <img src="./assets/images/pig_troll_sq.jpg" alt="pig-troll">
-    <!-- <canvas id="game-canvas" width="399" height="395"></canvas> -->
+<link href="https://fonts.googleapis.com/css?family=Galada|Monoton" rel="stylesheet">
+  <!-- The Start Game Modal -->
+  <div id="startModal" class="modal">
+    <div class="start-screen">
+      <h2 class="monoton">Trolly Poozleh!</h2>
+        <img class="clip-animation" id="ra-pony" src="./assets/images/rainbow_pony.png" alt="ra-pony">
+      <div id="instructions">
+        <h5 class="galada-intro-big">Click on green squares!</h5>
+        <h5 class="galada-intro-small">You start with 3 lives.  Click on the color of death (red) and you'll lose one!  Don't kill your troll!</h5>
+      </div>
+      <button style="button" id="cheese" class="btn btn-danger start-button monoton closeStart">Start Game</button>
+    </div>
   </div>
+
+  <!-- The End Game Modal -->
+  <div id="winGameModal" class="modal">
+
+    <div class="start-screen">
+      <h2 class="monoton">You  Win!!!</h2>
+        <img class="win-troll" id="win-troll" src="./assets/images/win_troll.png" alt="win-troll">
+      <div id="instructions">
+        <h3 class="galada">You are amazing, how do you do it?</h3>
+      </div>
+      <button style="button" class="btn btn-danger start-button monoton closeWinGame">New Game</button>
+    </div>
+
+  </div>
+
+<!-- end game modal -->
+  <div id="loseGameModal" class="modal">
+
+    <div class="start-screen">
+      <h2 class="monoton">Game Over!</h2>
+        <img class="pony" id="sad-pony" src="./assets/images/sad_pony.png" alt="sad-pony">
+      <div id="instructions">
+        <h3 class="galada">You killed all three trolls.  Sad.</h3>
+      </div>
+      <button style="button" class="btn btn-danger start-button  monoton closeLoseGame" id="close1">New Game</button>
+    </div>
+
+  </div>
+
+  <div id="container" class="home">
+    <img class="level-image" src="./assets/images/pig_troll_sq.jpg" alt="pig-troll">
+  </div>
+
   <script src="main.bundle.js"></script>
+  <div class="peaker">
+    <img class="background-image" src="./assets/images/troll_png.png" alt="peaker">
+  </div>
+
 </body>
 </html>
