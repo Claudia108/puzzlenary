@@ -29,6 +29,25 @@ describe('game', function () {
     });
   });
 
+  describe('handleOutcome', function () {
+    context('when outcome is won', function () {
+      it('adds a new game level', function () {
+        const game = new Game(2, 2);
+        const outcome = "win";
+        game.start();
+        expect(game.currentLevel).to.equal(1);
+        expect($('#winGameModal').is(":visible")).to.equal(false);
+        game.handleOutcome(outcome);
+
+        expect(game.currentLevel).to.equal(2);
+        // expect($('#winGameModal').is(":visible")).to.equal(true);
+      });
+    });
+
+    context('when outcome is not won', function () {
+    });
+  });
+
   context('end', function () {
     it("resets the game's state", function () {
       const game = new Game(2, 2);

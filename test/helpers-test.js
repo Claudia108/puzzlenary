@@ -61,6 +61,20 @@ describe('helpers', function () {
           expect(game.lives).to.eql([]);
         });
       });
+
+      context("when it's a valid click", function () {
+        context("with two lives", function () {
+          // TODO
+        });
+
+        context("with one life", function () {
+          // TODO
+        });
+
+        context("with no lives", function () {
+          // TODO
+        });
+      });
     });
   });
 
