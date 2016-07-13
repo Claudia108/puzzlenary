@@ -29,6 +29,22 @@ body {
   color: #583b35;
 }
 
+#clicks-galada {
+  font-family: 'Galada', cursive;
+  font-size: 40px;
+  margin-bottom: -11px;
+  margin-top: 4px;
+  color: #583b35;
+}
+
+#level-galada {
+  font-family: 'Galada', cursive;
+  font-size: 40px;
+  margin-bottom: -11px;
+  margin-top: 4px;
+  color: #583b35;
+}
+
 .galada-intro-big {
   font-family: 'Galada', cursive;
   font-size: 40px;
