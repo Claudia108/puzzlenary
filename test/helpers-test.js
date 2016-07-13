@@ -2,10 +2,16 @@ import chai from 'chai';
 const endPlayArray = require('../lib/helpers.js');
 const classToggler = require('../lib/helpers.js');
 import Cell from '../lib/cell';
+import Game from '../lib/game';
+import $ from "jquery";
 const expect = chai.expect;
 
 
 describe('helpers', function () {
+  after(function() {
+    $('.game-table').remove();
+  });
+
   describe('classToggler', function () {
     context("when it's an invalid click", function () {
       context("with two lives", function () {
@@ -13,11 +19,13 @@ describe('helpers', function () {
           const el = {className: undefined};
           const game = {
             lives: ["life", "lost_life"],
-            isInvalidClick: function(arg) {
+            isInvalidClick: function() {
               return true;
             }
           };
-          const gameLifeCycle = undefined;
+          const gameLifeCycle = {
+            emit: function() {}
+          };
 
           classToggler(el, game, gameLifeCycle);
 
@@ -30,7 +38,7 @@ describe('helpers', function () {
           const el = {className: undefined};
           const game = {
             lives: ["lost_life"],
-            isInvalidClick: function(arg) {
+            isInvalidClick: function() {
               return true;
             }
           };
@@ -49,7 +57,7 @@ describe('helpers', function () {
           const el = {className: undefined};
           const game = {
             lives: [],
-            isInvalidClick: function(arg) {
+            isInvalidClick: function() {
               return true;
             }
           };
@@ -64,36 +72,47 @@ describe('helpers', function () {
       });
 
       context("when it's a valid click", function () {
-        context("with two lives", function () {
-          // TODO
+        it("changes class of element to transparent", function () {
+          const el = { className: "highlighted-1" };
+          const game = new Game(3, 3);
+
+          game.isInvalidClick = function () {
+            return false;
+          };
+          const gameLifeCycle = {
+            emit: function() {}
+          };
+
+          game.start();
+          expect(el.className).to.equal("highlighted-1");
+
+          classToggler(el, game, gameLifeCycle);
+
+          expect(el.className).to.equal("clicked");
         });
 
-        context("with one life", function () {
-          // TODO
-        });
+        it("removes one element from the array", function () {
+          const el = {
+            id: 1,
+            className: "highlighted-1"};
+          const game = new Game(3, 3);
+          game.isInvalidClick = function () {
+            return false;
+          };
 
-        context("with no lives", function () {
-          // TODO
+          const gameLifeCycle = {
+            emit: function() {}
+          };
+          game.start();
+
+          expect(game.grid.cellArray.length).to.equal(9);
+
+          classToggler(el, game, gameLifeCycle);
+
+          expect(game.grid.cellArray.length).to.equal(8);
+          expect(game.grid.cellArray).to.not.include(1);
         });
       });
-    });
-  });
-
-  context('endPlayArray', function () {
-    xit('removes elements from the array', function () {
-      const cellOne = new Cell(1);
-      const cellTwo = new Cell(2);
-      const cellId = 1;
-      let cellArray = [cellOne, cellTwo];
-
-      expect(cellArray.length).to.equal(2);
-
-      endPlayArray(cellId, cellArray);
-
-      expect(cellArray).to.eql([cellTwo]);
-      expect(cellArray.length).to.equal(1);
-      expect(cellArray).to.contain(cellTwo);
-      expect(cellArray).to.not.contain(cellOne);
     });
   });
 });

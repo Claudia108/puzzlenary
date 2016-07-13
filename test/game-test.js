@@ -45,7 +45,8 @@ describe('game', function () {
     });
 
     context('when outcome is lost', function () {
-      it('resets the current game level', function () {
+      it('resets the current game level', function (done) {
+        this.timeout(0); // check on duration of this function
         const game = new Game(2, 2);
         const outcome = "lost";
         game.start();
@@ -53,9 +54,41 @@ describe('game', function () {
         expect($('#winGameModal').is(":visible")).to.equal(false);
         game.handleOutcome(outcome);
 
-        game.clearEvents();
         expect(game.currentLevel).to.equal(1);
+        done();
         // expect($('#winGameModal').is(":visible")).to.equal(true);
+      });
+    });
+  });
+
+  context('playAgain', function () {
+    it('resets lives to 3 lives', function () {
+      const game = new Game(2, 2);
+
+      game.start();
+
+      expect(game.lives.length).to.equal(3);
+
+      game.lives.length = 1;
+      game.playAgain();
+
+      expect(game.lives.length).to.equal(3);
+
+    });
+
+    context('from current level or level 1', function () {
+      it('when user decides for current level', function () {
+        const game = new Game(2, 2);
+
+        game.start();
+
+        game.currentLevel = 2;
+        game.lives.length = 0;
+
+        game.playAgain();
+        $('button#close1').trigger('click');
+
+        expect(game.currentLevel).to.equal(2);
       });
     });
   });
