@@ -1,8 +1,13 @@
 import chai from "chai";
 import Grid from '../lib/grid';
+import $ from "jquery";
 const expect = chai.expect;
 
 describe('grid', function () {
+  after(function() {
+    $('.game-table').remove();
+  });
+
   it('has columns and rows', function () {
     const grid = new Grid({});
 

@@ -5,6 +5,7 @@
 require('./grid-test');
 require('./helpers-test');
 require('./cell-test');
+require('./game-test');
 
 // const expect = chai.expect;
 
