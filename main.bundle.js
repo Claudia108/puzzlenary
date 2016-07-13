@@ -45,14 +45,442 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(2);
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	// import $ from "jquery";
+	//
+	// class View {
+	//   constructor(containerId) {
+	//     this.$containerEl = $(`#${containerId}`);
+	//   }
+	//
+	//   render() {
+	//     return true;
+	//   }
+	//
+	//   createGameDivElement(content) {
+	//     const gameDivEl = document.createElement("div");
+	//     gameDivEl.className = "game";
+	//     gameDivEl.innerHTML = content;
+	//     return gameDivEl;
+	//   }
+	// }
+	//
+	// export default View;
+
+	// setInterval(function() {
+	//   var number=(Math.floor((Math.random() * 4) +  1));
+	//   // var id=(Math.floor((Math.random() * 9) +  1));
+	//
+	//   var cell= this.grid.cellArray[(Math.floor( (Math.random() * this.grid.cellArray.length) +  1) )];
+	//   var id= cell.id;
+	//   var colors = "highlighted" + "-" + number;
+	//
+	//   $("td" +"#" + id).attr('class', colors);
+	//
+	// }, 500);
+	"use strict";
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	__webpack_require__(3);
+
+	var _game = __webpack_require__(7);
+
+	var _game2 = _interopRequireDefault(_game);
+
+	var _config = __webpack_require__(14);
+
+	var _config2 = _interopRequireDefault(_config);
+
+	var _modals = __webpack_require__(15);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var game = new _game2.default(_config2.default.columns, _config2.default.rows);
+	game.start();
+	(0, _modals.startModalSetup)();
+	(0, _modals.winModalSetup)();
+	(0, _modals.loseModalSetup)();
+
+	////////////////////////////////////////////
+	var startModal = document.getElementById('startModal');
+
+	window.onload = function () {
+	  startModal.style.display = "block";
+	};
+
+	// var troll1 = document.getElementsByClassName('lt1');
+	// var troll2 = document.getElementsByClassName('lt2');
+	// if (game.lives.length === 2) {
+	//   troll1.style.display = "none";
+	// } else if (game.lives.length === 1) {
+	//   troll2.style.display = "none";
+	// }
+	// debugger;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(4);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./main.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./main.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "body {\n  background-color: darkseagreen;\n}\n\n.monoton {\n  font-family: 'Monoton', cursive;\n}\n.galada {\n  font-family: 'Galada', cursive;\n  font-size: 40px;\n  margin-bottom: -11px;\n  margin-top: -19px;\n}\n\n.galada-intro-big {\n  font-family: 'Galada', cursive;\n  font-size: 40px;\n  margin-bottom: -11px;\n  margin-top: -50px;\n}\n\n.galada-intro-small {\n  font-family: 'Galada', cursive;\n  font-size: 20px;\n  margin-bottom: -11px;\n  margin-top: 0px;\n}\n\n.start-screen {\n  background-color: rgba(90, 171, 127, 0.84);\n  height: 500px;\n  width: 100%;\n  text-align: center;\n}\n\nh2 {\n  margin-top: 26px;\n  margin-bottom: -57px;\n  padding-top: 13px;\n  color: white;\n  font-size: 79px;\n}\n\n.start-button {\n  background-color: rgb(55, 54, 107);\n  color: white;\n  font-size: 2em;\n  padding: 8px;\n  border-radius: 7px;\n  margin-top: 15px;\n}\n\n.instructions {\n  font-size: 25px;\n  font-weight: bold;\n}\n\n#container {\n  width: 395px;\n  height: 399px;\n  position: relative;\n  margin-left: 30%;\n  display: initial;\n  z-index: -1;\n  background-color: blue;\n}\n\n.peaker {\n  position: absolute;;\n  margin-left: 87px;\n  z-index: -2;\n  top: 0px;\n  height: 500px;\n}\n\n.peaker img {\n  height: 500px;\n}\n\n.pony {\n  height: 258px;\n  padding-top: 21px;\n}\n\n#win-troll {\n  height: 281px;\n}\n\n#troll-face {\n  width: 300px;\n  height: 200px;\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: auto;\n  margin-top: 10px;\n  /*box-shadow: 2px 2px 50px white;*/\n  border-radius: 7px;\n}\n\n#ra-pony {\n  width: 300px;\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 7px;\n}\n\n.level-image {\n  width: 405px;\n  height: 400px;\n  margin-top: 18px;\n  box-shadow: 1px 1px 50px white;\n  position: absolute;\n  overflow: hidden;\n  object-fit: contain;\n}\n\n.background-image {\n  display: block;\n}\n\n.lifeTrolls{\n  z-index: -4;\n  float: right;\n  margin-top: 126px;\n}\n\n.life_troll_1 {\n  display: inline-block;\n  height: 150px;\n}\n\n.life_troll_2 {\n  height: 168px;\n}\n\n.life_troll_3 {\n  height: 150px;\n}\n\n.lt1 {\n  display: inline-block;\n}\n\n.lt2 {\n  display: inline-block;\n}\n\n.lt3 {\n  display: inline-block;\n}\n\n.game-table {\n  position:relative;\n  margin-left: 30%;\n  border-collapse:collapse;\n  width: 405px;\n  height: 405px;\n  z-index: 1;\n  border-color: black;\n  border-style: solid;\n  border-weight: 40px;\n  border-width: thick;\n}\n\n.game-table td {\n  cursor:pointer;\n  width:30px;\n  height:30px;\n  border:1px solid #ccc;\n  background-color: purple;\n  text-align:center;\n  font-family:sans-serif;\n  font-size:13px\n}\n\n.game-table td.clicked {\n  background-color: transparent;\n}\n\n.game-table td.highlighted-1 {\n  background-color: green;\n}\n\n.game-table td.highlighted-2 {\n  background-color: red;\n}\n\n.game-table td.highlighted-3 {\n  background-color: blue;\n}\n\n.game-table td.highlighted-4 {\n  background-color: purple;\n}\n\n.game-table td.highlighted-5 {\n  background-color: yellow;\n}\n\n.game-table td.highlighted-6 {\n  background-color: orange;\n}\n\n.modal {\n  display: none;\n  position: fixed;\n  z-index: 2;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0,0,0);\n  background-color: rgba(0,0,0,0.4);\n}\n\n.modal-content {\n  background-color: #fefefe;\n  margin: 15% auto;\n  padding: 20px;\n  border: 1px solid #888;\n  width: 80%;\n}\n\n.close {\n  color: #aaa;\n  font-size: 28px;\n\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -60,43 +488,149 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(2);
+	var _jQuery = __webpack_require__(8);
 
-	var _jquery2 = _interopRequireDefault(_jquery);
+	var _jQuery2 = _interopRequireDefault(_jQuery);
+
+	var _grid = __webpack_require__(9);
+
+	var _grid2 = _interopRequireDefault(_grid);
+
+	var _level = __webpack_require__(11);
+
+	var _level2 = _interopRequireDefault(_level);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var View = function () {
-	  function View(containerId) {
-	    _classCallCheck(this, View);
+	var classToggler = __webpack_require__(12);
+	var events = __webpack_require__(13);
+	var gameLifeCycle = new events.EventEmitter();
 
-	    this.$containerEl = (0, _jquery2.default)("#" + containerId);
+	var Game = function () {
+	  function Game(columns, rows) {
+	    _classCallCheck(this, Game);
+
+	    this.currentLevel = 1;
+	    this.levelData = new _level2.default(this.currentLevel).data; //sets level of rows and columns
+	    this.grid = new _grid2.default({ columns: this.levelData.columns, rows: this.levelData.rows });
+	    this.lives = this.resetLives();
+	    this.interval = "";
+	    this.clicks = 0;
 	  }
 
-	  _createClass(View, [{
-	    key: "render",
-	    value: function render() {
-	      return true;
+	  _createClass(Game, [{
+	    key: 'resetLives',
+	    value: function resetLives() {
+	      //creates the number of lives for user
+	      return ["troll1", "troll2", "troll3"];
 	    }
 	  }, {
-	    key: "createGameDivElement",
-	    value: function createGameDivElement(content) {
-	      var gameDivEl = document.createElement("div");
-	      gameDivEl.className = "game";
-	      gameDivEl.innerHTML = content;
-	      return gameDivEl;
+	    key: 'callbackToChangeClickState',
+	    value: function callbackToChangeClickState(e, game) {
+	      var el = e.target;
+	      ++game.clicks;
+	      console.log('number of clicks' + ' = ' + game.clicks);
+	      classToggler(el, game, gameLifeCycle);
+	    }
+	  }, {
+	    key: 'setupEvents',
+	    value: function setupEvents(callback) {
+	      var self = this;
+	      (0, _jQuery2.default)('.game-table').on('click', 'td', function (e) {
+	        return callback(e, self);
+	      });
+	      gameLifeCycle.on("end-game", function (outcome) {
+	        console.log(outcome);
+	        self.handleOutcome(outcome);
+	        self.end();
+	      });
+	    }
+	  }, {
+	    key: 'handleOutcome',
+	    value: function handleOutcome(outcome) {
+	      if (outcome === "win") {
+	        this.currentLevel++; //keeps track of currentLevel
+	        var winModal = document.getElementById('winGameModal');
+	        winModal.style.display = "block";
+	      } else {
+	        var loseModal = document.getElementById('loseGameModal');
+	        loseModal.style.display = "block";
+	        this.playAgain();
+	      }
+	      console.log("this.currentLevel = " + this.currentLevel);
+	    }
+	  }, {
+	    key: 'playAgain',
+	    value: function playAgain() {
+	      // allows user to start game/level over with full life
+	      this.lives = this.resetLives();
+	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {
+	        //do nothing stay on currentLevel
+	      } else {
+	        this.currentLevel = 1;
+	      }
+	    }
+	  }, {
+	    key: 'start',
+	    value: function start() {
+	      var levelData = arguments.length <= 0 || arguments[0] === undefined ? null : arguments[0];
+
+	      console.log("game started");
+	      this.grid.buildGrid(levelData); //starts off a null then changes based on level
+	      this.interval = setInterval(this._assignClasses(), 500);
+	      this.setupEvents(this.callbackToChangeClickState);
+	    }
+	  }, {
+	    key: 'end',
+	    value: function end() {
+	      clearInterval(this.interval);
+	      this.clicks = 0; //resets number of clicks to 0
+	      this.clearEvents(); //*** > clearEvents including on-end
+	      this.clearGrid(); //get rid of old grid
+	      this.levelData = new _level2.default(this.currentLevel).data;
+	      this.start(this.levelData);
+	    }
+	  }, {
+	    key: 'clearEvents',
+	    value: function clearEvents() {
+	      //removes all listeners after game is level is won or lost
+	      // allows you not to skip levels
+	      gameLifeCycle.removeAllListeners('end-game');
+	    }
+	  }, {
+	    key: 'clearGrid',
+	    value: function clearGrid() {
+	      // clears grid to 00 after each level to allow for next level
+	      var element = document.querySelector('.game-table');
+	      element.parentNode.removeChild(element);
+	    }
+	  }, {
+	    key: '_assignClasses',
+	    value: function _assignClasses() {
+	      var grid = this.grid;
+	      return function () {
+	        var number = Math.floor(Math.random() * 7); // 7 represents all available colors in main.css
+	        var cell = grid.cellArray[Math.floor(Math.random() * grid.cellArray.length)];
+	        var id = cell.id;
+	        var colors = "highlighted" + "-" + number;
+	        (0, _jQuery2.default)("td" + "#" + id).attr('class', colors);
+	        console.log("going");
+	      };
 	    }
 	  }]);
 
-	  return View;
+	  return Game;
 	}();
 
-	exports.default = View;
+	exports.default = Game;
+
+
+	module.exports = Game;
 
 /***/ },
-/* 2 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10139,373 +10673,583 @@
 
 
 /***/ },
-/* 3 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
-	var _view = __webpack_require__(1);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _view2 = _interopRequireDefault(_view);
+	var _cell = __webpack_require__(10);
 
-	__webpack_require__(4);
+	var _cell2 = _interopRequireDefault(_cell);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import $ from "jquery";
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+	var Grid = function () {
+	  function Grid(options) {
+	    _classCallCheck(this, Grid);
 
-	var gameInstance = new _view2.default("game-canvas");
+	    this.columns = options.columns;
+	    this.rows = options.rows;
+	    this.cellArray = [];
+	  }
 
-	gameInstance.render();
+	  _createClass(Grid, [{
+	    key: 'updateGridDimensions',
+	    value: function updateGridDimensions(levelData) {
+	      //update columns and rows
+	      //based on which level is being passed in
+	      if (levelData) {
+	        this.columns = levelData.columns;
+	        this.rows = levelData.rows;
+	      }
+	    }
+	  }, {
+	    key: 'buildGrid',
+	    value: function buildGrid(levelData) {
+	      this.updateGridDimensions(levelData);
+	      var i = 0;
+	      var grid = document.createElement('table');
+	      grid.className = 'game-table';
+
+	      for (var r = 0; r < this.rows; ++r) {
+	        var tr = grid.appendChild(document.createElement('tr'));
+	        for (var c = 0; c < this.columns; ++c) {
+	          var cell = tr.appendChild(document.createElement('td'));
+	          cell.id = ++i;
+	          var cell_data = new _cell2.default(i);
+	          this.cellArray.push(cell_data);
+	        }
+	      }
+	      document.body.appendChild(grid);
+	    }
+	  }]);
+
+	  return Grid;
+	}();
+
+	module.exports = Grid;
 
 /***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(5);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./main.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./main.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "html {\n  background-color: teal;\n}\n\n#game-canvas {\n  margin-top: 5%;\n  background-color: white;\n  margin-left: 40%;\n  box-shadow: 1px 1px 50px white;\n  border-radius: 10px;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 6 */
+/* 10 */
 /***/ function(module, exports) {
 
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
+	"use strict";
 
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
+	var Cell = function Cell(id) {
+	  _classCallCheck(this, Cell);
+
+	  this.id = id;
 	};
+
+	module.exports = Cell;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Level = function () {
+	  function Level(level) {
+	    _classCallCheck(this, Level);
+
+	    this.data = this.levelSelector(level);
+	  }
+
+	  _createClass(Level, [{
+	    key: "levelSelector",
+	    value: function levelSelector(level) {
+	      //selects currentLevel data
+	      if (level === 1) {
+	        return this.levelOne();
+	      } else if (level === 2) {
+	        return this.levelTwo();
+	      } else if (level === 3) {
+	        return this.levelThree();
+	      } else if (level === 4) {
+	        return this.levelFour();
+	      } else {
+	        return this.levelOne();
+	      }
+	    }
+	  }, {
+	    key: "levelOne",
+	    value: function levelOne() {
+	      return {
+	        columns: 3,
+	        rows: 3,
+	        invalidclicks: ["highlighted-2"] };
+	    }
+	  }, {
+	    key: "levelTwo",
+	    value: function levelTwo() {
+	      return {
+	        columns: 4,
+	        rows: 4,
+	        invalidclicks: ["highlighted-2", "highlighted-3"] };
+	    }
+	  }, {
+	    key: "levelThree",
+	    value: function levelThree() {
+	      return {
+	        columns: 5,
+	        rows: 5,
+	        invalidclicks: ["highlighted-2", "highlighted-3", "highlighted-4"] };
+	    }
+	  }, {
+	    key: "levelFour",
+	    value: function levelFour() {
+	      return {
+	        columns: 8,
+	        rows: 8,
+	        invalidclicks: ["highlighted-4", "highlighted-5", "highlighted-6"] };
+	    }
+	  }, {
+	    key: "levelFive",
+	    value: function levelFive() {
+	      return {
+	        columns: 10,
+	        rows: 10,
+	        invalidclicks: ["highlighted-2", "highlighted-3", "highlighted-4", "highlighted-5", "highlighted-6"] };
+	    }
+	  }]);
+
+	  return Level;
+	}();
+
+	module.exports = Level;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	function endPlayArray(cellId, array) {
+	  for (var i = 0; i < array.length; i++) {
+	    if (array[i].id === Number(cellId)) {
+	      array.splice(i, 1);
+	    }
+	  }
+	  return array;
+	}
+
+	function classToggler(el, game, gameLifeCycle) {
+	  //if (el.className === "highlighted-2") {
+	  if (game.levelData.invalidclicks.includes(el.className)) {
+	    //includes level difficulties
+	    // alert("You just lost a life");
+	    console.log("You clicked: " + el.className);
+	    removeLife(game.lives, gameLifeCycle);
+	  } else if (el.className === "highlighted-1") {
+	    el.className = "clicked";
+	    solveTile(el.id, game.grid.cellArray, gameLifeCycle);
+	  }
+	}
+
+	function solveTile(id, array, gameLifeCycle) {
+	  array = endPlayArray(id, array);
+	  if (array.length === 0) {
+	    gameLifeCycle.emit("end-game", "win");
+	  }
+	}
+
+	function removeLife(array, gameLifeCycle) {
+	  array.pop();
+	  console.log("number of lives left:" + array.length);
+	  var troll1 = document.getElementsByClassName('lt1');
+	  var troll2 = document.getElementsByClassName('lt2');
+	  if (array.length === 2) {
+	    troll1.style.display = "none";
+	  } else if (array.length === 1) {
+	    troll2.style.display = "none";
+	  } else if (array.length === 0) {
+	    gameLifeCycle.emit("end-game", "lost");
+	  }
+	}
+
+	module.exports = classToggler;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	function EventEmitter() {
+	  this._events = this._events || {};
+	  this._maxListeners = this._maxListeners || undefined;
+	}
+	module.exports = EventEmitter;
+
+	// Backwards-compat with node 0.10.x
+	EventEmitter.EventEmitter = EventEmitter;
+
+	EventEmitter.prototype._events = undefined;
+	EventEmitter.prototype._maxListeners = undefined;
+
+	// By default EventEmitters will print a warning if more than 10 listeners are
+	// added to it. This is a useful default which helps finding memory leaks.
+	EventEmitter.defaultMaxListeners = 10;
+
+	// Obviously not all Emitters should be limited to 10. This function allows
+	// that to be increased. Set to zero for unlimited.
+	EventEmitter.prototype.setMaxListeners = function(n) {
+	  if (!isNumber(n) || n < 0 || isNaN(n))
+	    throw TypeError('n must be a positive number');
+	  this._maxListeners = n;
+	  return this;
+	};
+
+	EventEmitter.prototype.emit = function(type) {
+	  var er, handler, len, args, i, listeners;
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // If there is no 'error' event listener then throw.
+	  if (type === 'error') {
+	    if (!this._events.error ||
+	        (isObject(this._events.error) && !this._events.error.length)) {
+	      er = arguments[1];
+	      if (er instanceof Error) {
+	        throw er; // Unhandled 'error' event
+	      } else {
+	        // At least give some kind of context to the user
+	        var err = new Error('Uncaught, unspecified "error" event. (' + er + ')');
+	        err.context = er;
+	        throw err;
+	      }
+	    }
+	  }
+
+	  handler = this._events[type];
+
+	  if (isUndefined(handler))
+	    return false;
+
+	  if (isFunction(handler)) {
+	    switch (arguments.length) {
+	      // fast cases
+	      case 1:
+	        handler.call(this);
+	        break;
+	      case 2:
+	        handler.call(this, arguments[1]);
+	        break;
+	      case 3:
+	        handler.call(this, arguments[1], arguments[2]);
+	        break;
+	      // slower
+	      default:
+	        args = Array.prototype.slice.call(arguments, 1);
+	        handler.apply(this, args);
+	    }
+	  } else if (isObject(handler)) {
+	    args = Array.prototype.slice.call(arguments, 1);
+	    listeners = handler.slice();
+	    len = listeners.length;
+	    for (i = 0; i < len; i++)
+	      listeners[i].apply(this, args);
+	  }
+
+	  return true;
+	};
+
+	EventEmitter.prototype.addListener = function(type, listener) {
+	  var m;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events)
+	    this._events = {};
+
+	  // To avoid recursion in the case that type === "newListener"! Before
+	  // adding it to the listeners, first emit "newListener".
+	  if (this._events.newListener)
+	    this.emit('newListener', type,
+	              isFunction(listener.listener) ?
+	              listener.listener : listener);
+
+	  if (!this._events[type])
+	    // Optimize the case of one listener. Don't need the extra array object.
+	    this._events[type] = listener;
+	  else if (isObject(this._events[type]))
+	    // If we've already got an array, just append.
+	    this._events[type].push(listener);
+	  else
+	    // Adding the second element, need to change to array.
+	    this._events[type] = [this._events[type], listener];
+
+	  // Check for listener leak
+	  if (isObject(this._events[type]) && !this._events[type].warned) {
+	    if (!isUndefined(this._maxListeners)) {
+	      m = this._maxListeners;
+	    } else {
+	      m = EventEmitter.defaultMaxListeners;
+	    }
+
+	    if (m && m > 0 && this._events[type].length > m) {
+	      this._events[type].warned = true;
+	      console.error('(node) warning: possible EventEmitter memory ' +
+	                    'leak detected. %d listeners added. ' +
+	                    'Use emitter.setMaxListeners() to increase limit.',
+	                    this._events[type].length);
+	      if (typeof console.trace === 'function') {
+	        // not supported in IE 10
+	        console.trace();
+	      }
+	    }
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.on = EventEmitter.prototype.addListener;
+
+	EventEmitter.prototype.once = function(type, listener) {
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  var fired = false;
+
+	  function g() {
+	    this.removeListener(type, g);
+
+	    if (!fired) {
+	      fired = true;
+	      listener.apply(this, arguments);
+	    }
+	  }
+
+	  g.listener = listener;
+	  this.on(type, g);
+
+	  return this;
+	};
+
+	// emits a 'removeListener' event iff the listener was removed
+	EventEmitter.prototype.removeListener = function(type, listener) {
+	  var list, position, length, i;
+
+	  if (!isFunction(listener))
+	    throw TypeError('listener must be a function');
+
+	  if (!this._events || !this._events[type])
+	    return this;
+
+	  list = this._events[type];
+	  length = list.length;
+	  position = -1;
+
+	  if (list === listener ||
+	      (isFunction(list.listener) && list.listener === listener)) {
+	    delete this._events[type];
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+
+	  } else if (isObject(list)) {
+	    for (i = length; i-- > 0;) {
+	      if (list[i] === listener ||
+	          (list[i].listener && list[i].listener === listener)) {
+	        position = i;
+	        break;
+	      }
+	    }
+
+	    if (position < 0)
+	      return this;
+
+	    if (list.length === 1) {
+	      list.length = 0;
+	      delete this._events[type];
+	    } else {
+	      list.splice(position, 1);
+	    }
+
+	    if (this._events.removeListener)
+	      this.emit('removeListener', type, listener);
+	  }
+
+	  return this;
+	};
+
+	EventEmitter.prototype.removeAllListeners = function(type) {
+	  var key, listeners;
+
+	  if (!this._events)
+	    return this;
+
+	  // not listening for removeListener, no need to emit
+	  if (!this._events.removeListener) {
+	    if (arguments.length === 0)
+	      this._events = {};
+	    else if (this._events[type])
+	      delete this._events[type];
+	    return this;
+	  }
+
+	  // emit removeListener for all listeners on all events
+	  if (arguments.length === 0) {
+	    for (key in this._events) {
+	      if (key === 'removeListener') continue;
+	      this.removeAllListeners(key);
+	    }
+	    this.removeAllListeners('removeListener');
+	    this._events = {};
+	    return this;
+	  }
+
+	  listeners = this._events[type];
+
+	  if (isFunction(listeners)) {
+	    this.removeListener(type, listeners);
+	  } else if (listeners) {
+	    // LIFO order
+	    while (listeners.length)
+	      this.removeListener(type, listeners[listeners.length - 1]);
+	  }
+	  delete this._events[type];
+
+	  return this;
+	};
+
+	EventEmitter.prototype.listeners = function(type) {
+	  var ret;
+	  if (!this._events || !this._events[type])
+	    ret = [];
+	  else if (isFunction(this._events[type]))
+	    ret = [this._events[type]];
+	  else
+	    ret = this._events[type].slice();
+	  return ret;
+	};
+
+	EventEmitter.prototype.listenerCount = function(type) {
+	  if (this._events) {
+	    var evlistener = this._events[type];
+
+	    if (isFunction(evlistener))
+	      return 1;
+	    else if (evlistener)
+	      return evlistener.length;
+	  }
+	  return 0;
+	};
+
+	EventEmitter.listenerCount = function(emitter, type) {
+	  return emitter.listenerCount(type);
+	};
+
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
 
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/* 14 */
+/***/ function(module, exports) {
 
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
+	'use strict';
 
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
+	var Config = {
+	  columns: 3,
+	  rows: 3
+	};
 
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	module.exports = Config;
 
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
 
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
+	"use strict";
 
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.startModalSetup = startModalSetup;
+	exports.winModalSetup = winModalSetup;
+	exports.loseModalSetup = loseModalSetup;
+	////////////////////////////////////////////
+	function startModalSetup() {
+
+	  var startModal = document.getElementById('startModal');
+
+	  var closeStart = document.getElementsByClassName("closeStart")[0];
+
+	  closeStart.onclick = function () {
+	    startModal.style.display = "none";
+	  };
 	}
 
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
+	////////////////////////////////////////////
+	function winModalSetup() {
+	  var winModal = document.getElementById('winGameModal');
+
+	  var closeWin = document.getElementsByClassName("closeWinGame")[0];
+
+	  // let newGame = new Game(Config.columns, Config.rows);
+
+	  closeWin.onclick = function () {
+	    winModal.style.display = "none";
+	    // newGame.start();
+	  };
 	}
 
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
+	////////////////////////////////////////////
+	function loseModalSetup() {
+	  var endModal = document.getElementById('loseGameModal');
+	  var close = document.getElementsByClassName("closeLoseGame")[0];
+
+	  close.onclick = function () {
+	    endModal.style.display = "none";
+	  };
 	}
 
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		var blob = new Blob([css], { type: "text/css" });
-
-		var oldSrc = linkElement.href;
-
-		linkElement.href = URL.createObjectURL(blob);
-
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
+	module.exports = { startModalSetup: startModalSetup, winModalSetup: winModalSetup, loseModalSetup: loseModalSetup };
 
 /***/ }
 /******/ ]);

@@ -85,6 +85,7 @@ h2 {
 #win-troll {
   height: 281px;
 }
+
 #troll-face {
   width: 300px;
   height: 200px;
@@ -99,13 +100,11 @@ h2 {
 
 #ra-pony {
   width: 300px;
-  /*height: 200px;*/
   position: relative;
   overflow: hidden;
   display: block;
   margin: auto;
   margin-top: 10px;
-  /*box-shadow: 2px 2px 50px white;*/
   border-radius: 7px;
 }
 
@@ -122,6 +121,36 @@ h2 {
 .background-image {
   display: block;
 }
+
+.lifeTrolls{
+  z-index: -4;
+  float: right;
+  margin-top: 126px;
+}
+
+.life_troll_1 {
+  height: 150px;
+}
+
+.life_troll_2 {
+  height: 168px;
+}
+
+.life_troll_3 {
+  height: 150px;
+}
+
+/*.lt1 {
+  display: inline-block;
+}
+
+.lt2 {
+  display: inline-block;
+}
+
+.lt3 {
+  display: inline-block;
+}*/
 
 .game-table {
   position:relative;
