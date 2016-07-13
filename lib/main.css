@@ -217,31 +217,31 @@ h2 {
   font-family:sans-serif;
 }
 
-.game-table td.clicked {
+.game-table td.highlighted-transparent {
   background-color: transparent;
 }
 
-.game-table td.highlighted-1 {
+.game-table td.highlighted-green {
   background-color: green;
 }
 
-.game-table td.highlighted-2 {
+.game-table td.highlighted-red {
   background-color: red;
 }
 
-.game-table td.highlighted-3 {
+.game-table td.highlighted-blue {
   background-color: blue;
 }
 
-.game-table td.highlighted-4 {
+.game-table td.highlighted-purple {
   background-color: purple;
 }
 
-.game-table td.highlighted-5 {
+.game-table td.highlighted-yellow {
   background-color: yellow;
 }
 
-.game-table td.highlighted-6 {
+.game-table td.highlighted-orange {
   background-color: orange;
 }
 
