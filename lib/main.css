@@ -5,11 +5,44 @@ body {
 .monoton {
   font-family: 'Monoton', cursive;
 }
+
+.monoton-score {
+  font-family: 'Monoton', cursive;
+  font-size: 36px;
+  margin-top: 26px;
+  margin-bottom: 12px;
+  color: #583b35;
+
+}
 .galada {
   font-family: 'Galada', cursive;
   font-size: 40px;
   margin-bottom: -11px;
   margin-top: -19px;
+}
+
+#lives-galada {
+  font-family: 'Galada', cursive;
+  font-size: 40px;
+  margin-bottom: -11px;
+  margin-top: 4px;
+  color: #583b35;
+}
+
+#clicks-galada {
+  font-family: 'Galada', cursive;
+  font-size: 40px;
+  margin-bottom: -11px;
+  margin-top: 4px;
+  color: #583b35;
+}
+
+#level-galada {
+  font-family: 'Galada', cursive;
+  font-size: 40px;
+  margin-bottom: -11px;
+  margin-top: 4px;
+  color: #583b35;
 }
 
 .galada-intro-big {
@@ -109,6 +142,60 @@ h2 {
   border-radius: 7px;
 }
 
+.scoreboard{
+  z-index: -4;
+  float: right;
+  margin-top: 36px;  margin-right: 50px;
+  margin-left: 50px;
+  width: 300px;
+  height: 150px;
+  text-align: center;
+}
+
+.lifeTrolls{
+  z-index: -4;
+  margin-left: 62px;
+  width: 160px;
+  height: 150px;
+  background-color: #b766ff;
+  padding: 10px;
+  border-style: solid;
+  border-color: #7c473c;
+  text-align: center;
+}
+
+.life_troll_1 {
+  height: 150px;
+}
+
+.life_troll_2 {
+  height: 168px;
+}
+
+.life_troll_3 {
+  height: 150px;
+}
+
+.lt1 {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background-color: red;
+  margin-top: 30px;
+}
+.lt2 {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background-color: blue;
+}
+.lt3 {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  background-color: green;
+}
+
 .level-image {
   width: 405px;
   height: 400px;
@@ -130,10 +217,10 @@ h2 {
   width: 405px;
   height: 405px;
   z-index: 1;
-  border-color: black;
   border-style: solid;
   border-weight: 40px;
   border-width: thick;
+  border-color: #583b35;
 }
 
 .game-table td {
@@ -144,7 +231,6 @@ h2 {
   background-color: purple;
   text-align:center;
   font-family:sans-serif;
-  font-size:13px
 }
 
 .game-table td.highlighted-transparent {
@@ -199,7 +285,6 @@ h2 {
 .close {
   color: #aaa;
   font-size: 28px;
-
 }
 
 .close:hover,
