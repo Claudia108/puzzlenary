@@ -15,7 +15,7 @@ describe('game', function () {
       game.start();
 
       expect($('.game-table').length).to.equal(1);
-      expect(game.clicks).to.equal(0);
+      expect(game.clicks).to.equal(1);
       expect(game.interval > 0).to.equal(true);
     });
 
@@ -25,7 +25,7 @@ describe('game', function () {
       game.start();
       $('.game-table td').first().trigger('click');
 
-      expect(game.clicks).to.equal(1);
+      expect(game.clicks).to.equal(2);
     });
   });
 
@@ -116,22 +116,22 @@ describe('game', function () {
       game.end();
 
       expect($('.game-table').length).to.equal(0);
-      expect(game.clicks).to.equal(0);
+      expect(game.clicks).to.equal(1);
     });
 
     it('clears click event handlers', function () {
       const game = new Game(2, 2);
-      expect(game.clicks).to.equal(0);
+      expect(game.clicks).to.equal(1);
 
       game.start();
       $('.game-table td').first().trigger('click');
 
-      expect(game.clicks).to.equal(1);
+      expect(game.clicks).to.equal(2);
 
       game.end();
       $('.game-table td').first().trigger('click');
 
-      expect(game.clicks).to.equal(0);
+      expect(game.clicks).to.equal(1);
     });
   });
 });

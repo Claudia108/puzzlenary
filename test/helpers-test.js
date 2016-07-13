@@ -43,7 +43,6 @@ describe('helpers', function () {
           const gameLifeCycle = {
             emit: function() {}
           };
-
           classToggler(el, game, gameLifeCycle);
 
           expect(game.lives).to.eql([]);
