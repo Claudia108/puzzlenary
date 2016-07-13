@@ -1,7 +1,5 @@
 import chai from 'chai';
-const endPlayArray = require('../lib/helpers.js');
 const classToggler = require('../lib/helpers.js');
-import Cell from '../lib/cell';
 import Game from '../lib/game';
 import $ from "jquery";
 const expect = chai.expect;
@@ -73,7 +71,7 @@ describe('helpers', function () {
 
       context("when it's a valid click", function () {
         it("changes class of element to transparent", function () {
-          const el = { className: "highlighted-1" };
+          const el = { className: "highlighted-green" };
           const game = new Game(3, 3);
 
           game.isInvalidClick = function () {
@@ -84,17 +82,17 @@ describe('helpers', function () {
           };
 
           game.start();
-          expect(el.className).to.equal("highlighted-1");
+          expect(el.className).to.equal("highlighted-green");
 
           classToggler(el, game, gameLifeCycle);
 
-          expect(el.className).to.equal("clicked");
+          expect(el.className).to.equal("highlighted-transparent");
         });
 
         it("removes one element from the array", function () {
           const el = {
             id: 1,
-            className: "highlighted-1"};
+            className: "highlighted-green"};
           const game = new Game(3, 3);
           game.isInvalidClick = function () {
             return false;
