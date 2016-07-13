@@ -4,6 +4,7 @@ const classToggler = require('../lib/helpers.js');
 import Cell from '../lib/cell';
 const expect = chai.expect;
 
+
 describe('helpers', function () {
   describe('classToggler', function () {
     context("when it's an invalid click", function () {
@@ -15,7 +16,7 @@ describe('helpers', function () {
             isInvalidClick: function(arg) {
               return true;
             }
-          }
+          };
           const gameLifeCycle = undefined;
 
           classToggler(el, game, gameLifeCycle);
@@ -32,7 +33,7 @@ describe('helpers', function () {
             isInvalidClick: function(arg) {
               return true;
             }
-          }
+          };
           const gameLifeCycle = {
             emit: function() {}
           };
@@ -51,7 +52,7 @@ describe('helpers', function () {
             isInvalidClick: function(arg) {
               return true;
             }
-          }
+          };
           const gameLifeCycle = {
             emit: function() {}
           };

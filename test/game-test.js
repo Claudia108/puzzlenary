@@ -44,7 +44,19 @@ describe('game', function () {
       });
     });
 
-    context('when outcome is not won', function () {
+    context('when outcome is lost', function () {
+      it('resets the current game level', function () {
+        const game = new Game(2, 2);
+        const outcome = "lost";
+        game.start();
+        expect(game.currentLevel).to.equal(1);
+        expect($('#winGameModal').is(":visible")).to.equal(false);
+        game.handleOutcome(outcome);
+
+        game.clearEvents();
+        expect(game.currentLevel).to.equal(1);
+        // expect($('#winGameModal').is(":visible")).to.equal(true);
+      });
     });
   });
 
