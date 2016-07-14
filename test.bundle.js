@@ -185,6 +185,7 @@
 	    key: 'playAgain',
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
+
 	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {
 	        //do nothing stay on currentLevel
 	      } else {
@@ -199,12 +200,17 @@
 	      this.grid.buildGrid(levelData);
 	      var initialScoreSelector = document.querySelector('#clicks-galada');
 	      if (initialScoreSelector) {
-	        initialScoreSelector.innerHTML = "Score: " + 0;
+	        initialScoreSelector.innerHTML = "Score " + 0;
 	      }
 	      var levelImageSelector = document.querySelector('.level-image');
 	      if (levelImageSelector) {
 	        levelImageSelector.src = this.levelData.levelPictures;
 	      }
+	      var instDiv = document.createElement('p');
+	      instDiv.className = 'level-info';
+	      instDiv.innerHTML = this.levelData.levelInstructions;
+	      document.body.appendChild(instDiv);
+
 	      this.interval = setInterval(this._assignClasses(), 500);
 	      this.setupEvents(this.callbackToChangeClickState);
 	    }
@@ -221,7 +227,9 @@
 	      this.clicks = 1;
 	      this.clearEvents();
 	      this.levelData = new _level2.default(this.currentLevel).data;
+	      // document.querySelector('.level-info').style.display = "none";
 	      (0, _jQuery2.default)('.game-table').remove();
+	      (0, _jQuery2.default)('.level-info').remove();
 	    }
 	  }, {
 	    key: 'clearEvents',
@@ -10455,7 +10463,8 @@
 	        columns: 3,
 	        rows: 3,
 	        invalidClicks: ["highlighted-red"],
-	        levelPictures: "./assets/images/hermagesty.jpg"
+	        levelPictures: "./assets/images/pig_troll_sq.jpg",
+	        levelInstructions: "Click all GREEN tiles to win level.   Color of Death is: RED"
 	      };
 	    }
 	  }, {
@@ -10466,7 +10475,8 @@
 	        rows: 4,
 
 	        invalidClicks: ["highlighted-red", "highlighted-blue"],
-	        levelPictures: "./assets/images/family.jpg"
+	        levelPictures: "./assets/images/family_sq.jpg",
+	        levelInstructions: "Click all GREEN tiles to win level.  Colors of Death are: RED & BLUE"
 	      };
 	    }
 	  }, {
@@ -10476,7 +10486,8 @@
 	        columns: 5,
 	        rows: 5,
 	        invalidClicks: ["highlighted-red", "highlighted-blue", "highlighted-purple"],
-	        levelPictures: "./assets/images/suprize.jpg"
+	        levelPictures: "./assets/images/suprize.jpg",
+	        levelInstructions: "Click all GREEN tiles to win level.  Colors of Death are: RED, BLUE, & PURPLE"
 	      };
 	    }
 	  }, {
@@ -10486,7 +10497,8 @@
 	        columns: 8,
 	        rows: 8,
 	        invalidClicks: ["highlighted-red", "highlighted-blue", "highlighted-purple", "highlighted-orange"],
-	        levelPictures: "./assets/images/horsetroll.jpg"
+	        levelPictures: "./assets/images/horsetroll.jpg",
+	        levelInstructions: "Click all GREEN tiles to win level.  Colors of Death are: RED, BLUE, PURLE, & ORANGE"
 	      };
 	    }
 	  }, {
@@ -10496,7 +10508,8 @@
 	        columns: 10,
 	        rows: 10,
 	        invalidClicks: ["highlighted-red", "highlighted-blue", "highlighted-purple", "highlighted-orange", "highlighted-yellow"],
-	        levelPictures: "./assets/images/hermagesty.jpg"
+	        levelPictures: "./assets/images/hermagesty.jpg",
+	        levelInstructions: "Click all GREEN tiles to win level.  Colors of Death are: RED, BLUE, PURLE, ORANGE, & YELLOW.  Best of luck with that, friend."
 	      };
 	    }
 	  }]);
@@ -10514,7 +10527,6 @@
 
 	function classToggler(el, game, gameLifeCycle) {
 	  if (game.isInvalidClick(el)) {
-	    // console.log("You clicked: " + el.className );
 	    removeLife(game.lives, gameLifeCycle);
 	  } else if (el.className === "highlighted-green") {
 	    el.className = "highlighted-transparent";
