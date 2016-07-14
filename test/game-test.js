@@ -75,36 +75,6 @@ describe('game', function () {
       expect(game.lives.length).to.equal(3);
 
     });
-
-    context('from current level or level 1', function () {
-      xit('when user decides for current level', function () {
-        const game = new Game(2, 2);
-
-        game.start();
-
-        game.currentLevel = 2;
-        game.lives.length = 0;
-
-        game.playAgain();
-        // $('button#close1').trigger('click');
-
-        expect(game.currentLevel).to.equal(2);
-      });
-
-      xit('when user decides for current level', function () {
-        const game = new Game(2, 2);
-
-        game.start();
-
-        game.currentLevel = 3;
-        game.lives.length = 0;
-
-        game.playAgain();
-        // $('button#close1').trigger('click');
-
-        expect(game.currentLevel).to.equal(1);
-      });
-    });
   });
 
   context('end', function () {
