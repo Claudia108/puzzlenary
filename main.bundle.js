@@ -556,7 +556,7 @@
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
 
-	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {} else {
+	      if (confirm("Click 'Cancel' to restart the game. Click 'OK' to restart the level.") === true) {} else {
 	        this.currentLevel = 1;
 	      }
 	    }
