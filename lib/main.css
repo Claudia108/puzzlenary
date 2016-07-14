@@ -23,7 +23,7 @@ body {
 
 #lives-galada {
   font-family: 'Galada', cursive;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: -11px;
   margin-top: 4px;
   color: #583b35;
@@ -31,23 +31,24 @@ body {
 
 #clicks-galada {
   font-family: 'Galada', cursive;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: -11px;
-  margin-top: 4px;
+  margin-top: -2px;
   color: #583b35;
 }
 
 #level-galada {
-  font-family: 'Galada', cursive;
-  font-size: 40px;
+  font-family: 'Monoton', cursive;
+  font-size: 30px;
   margin-bottom: -11px;
-  margin-top: 4px;
+  margin-top: 11px;
   color: #583b35;
+  font-weight: bold;
 }
 
 .galada-intro-big {
   font-family: 'Galada', cursive;
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: -11px;
   margin-top: -50px;
 }
@@ -118,27 +119,14 @@ h2 {
 #win-troll {
   height: 281px;
 }
-#troll-face {
-  width: 300px;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  margin: auto;
-  margin-top: 10px;
-  /*box-shadow: 2px 2px 50px white;*/
-  border-radius: 7px;
-}
 
 #ra-pony {
   width: 300px;
-  /*height: 200px;*/
   position: relative;
   overflow: hidden;
   display: block;
   margin: auto;
   margin-top: 10px;
-  /*box-shadow: 2px 2px 50px white;*/
   border-radius: 7px;
 }
 
@@ -154,9 +142,9 @@ h2 {
 
 .lifeTrolls{
   z-index: -4;
-  margin-left: 62px;
-  width: 160px;
-  height: 150px;
+  margin-left: 26px;
+  width: 225px;
+  height: 222px;
   background-color: #b766ff;
   padding: 10px;
   border-style: solid;
@@ -164,36 +152,34 @@ h2 {
   text-align: center;
 }
 
-.life_troll_1 {
-  height: 150px;
-}
-
-.life_troll_2 {
-  height: 168px;
-}
-
-.life_troll_3 {
-  height: 150px;
+.life_troll {
+  height: 75px;
+  margin-left: 27px;
 }
 
 .lt1 {
   height: 50px;
   width: 50px;
   display: inline-block;
-  background-color: red;
-  margin-top: 30px;
+  margin-top: 19px;
+  margin-right: 23px;
+  margin-left: -69px;
 }
+
 .lt2 {
   height: 50px;
   width: 50px;
   display: inline-block;
-  background-color: blue;
+  margin-right: 13px;
+  margin-left: 11px;
 }
+
 .lt3 {
   height: 50px;
   width: 50px;
   display: inline-block;
-  background-color: green;
+  margin-right: -1px;
+  margin-left: 8px;
 }
 
 .level-image {
