@@ -12,8 +12,23 @@ body {
   margin-top: 26px;
   margin-bottom: 12px;
   color: #583b35;
-
 }
+
+.monoton-huge {
+    margin-left: 236px;
+    font-family: 'Monoton', cursive;
+    /*font-size: 36px;*/
+    /*margin-top: 26px;*/
+    /*margin-bottom: 12px;*/
+    color: rgba(88, 59, 53, 0.77);
+    margin-top: 26px;
+    margin-bottom: -123px;
+    padding-top: 13px;
+    /* color: white; */
+    font-size: 79px;
+    z-index: -10;
+}
+
 .galada {
   font-family: 'Galada', cursive;
   font-size: 40px;
@@ -40,9 +55,7 @@ body {
 .level-info {
   font-family: 'Galada', cursive;
   font-size: 30px;
-  margin-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-top: 68px;
   color: #583b35;
   text-align: center;
 }
@@ -111,14 +124,14 @@ h2 {
 
 .peaker {
   position: absolute;;
-  margin-left: 87px;
+  margin-left: 92px;
   z-index: -2;
-  top: 0px;
+  top: 54px;
   height: 500px;
 }
 
 .peaker img {
-  height: 500px;
+  height: 600px;
 }
 
 .pony {
@@ -143,7 +156,8 @@ h2 {
 .scoreboard{
   z-index: -4;
   float: right;
-  margin-top: 36px;  margin-right: 50px;
+  margin-top: 144px;
+  margin-right: 63px;
   margin-left: 50px;
   width: 300px;
   height: 150px;
@@ -195,7 +209,8 @@ h2 {
 .level-image {
   width: 405px;
   height: 400px;
-  margin-top: 18px;
+  margin-top: 144px;
+  margin-left: 46px;
   box-shadow: 1px 1px 50px white;
   position: absolute;
   overflow: hidden;
@@ -208,7 +223,8 @@ h2 {
 
 .game-table {
   position:relative;
-  margin-left: 30%;
+  margin-left: 425px;
+  margin-top: 125px;
   border-collapse:collapse;
   width: 405px;
   height: 405px;
