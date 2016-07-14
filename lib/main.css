@@ -95,7 +95,7 @@ h2 {
 /*//////////////////////////////////////////////*/
 .start-screen {
   background-color: rgba(90, 171, 127, 0.84);
-  height: 500px;
+  height: 100%;
   width: 100%;
   text-align: center;
 }
