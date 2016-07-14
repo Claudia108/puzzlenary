@@ -44,7 +44,7 @@ describe('game', function () {
 
     context('when outcome is lost', function () {
       it('resets the current game level', function (done) {
-        this.timeout(0); // check on duration of this function
+        this.timeout(0); 
         const game = new Game(2, 2);
         const outcome = "lost";
         game.start();
@@ -58,7 +58,8 @@ describe('game', function () {
   });
 
   context('playAgain', function () {
-    it('resets lives to 3 lives', function () {
+    it('resets lives to 3 lives', function (done) {
+      this.timeout(0);
       const game = new Game(2, 2);
 
       game.start();
@@ -69,7 +70,7 @@ describe('game', function () {
       game.playAgain();
 
       expect(game.lives.length).to.equal(3);
-
+      done();
     });
   });
 
