@@ -36,11 +36,9 @@ describe('game', function () {
         const outcome = "win";
         game.start();
         expect(game.currentLevel).to.equal(1);
-        expect($('#winGameModal').is(":visible")).to.equal(false);
         game.handleOutcome(outcome);
 
         expect(game.currentLevel).to.equal(2);
-        // expect($('#winGameModal').is(":visible")).to.equal(true);
       });
     });
 
@@ -51,12 +49,10 @@ describe('game', function () {
         const outcome = "lost";
         game.start();
         expect(game.currentLevel).to.equal(1);
-        expect($('#winGameModal').is(":visible")).to.equal(false);
         game.handleOutcome(outcome);
 
         expect(game.currentLevel).to.equal(1);
         done();
-        // expect($('#winGameModal').is(":visible")).to.equal(true);
       });
     });
   });
