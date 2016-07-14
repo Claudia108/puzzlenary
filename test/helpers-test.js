@@ -80,6 +80,10 @@ describe('helpers', function () {
             emit: function() {}
           };
 
+          game.hideLifePonies =  function (){
+            return true;
+          };
+
           game.start();
           expect(el.className).to.equal("highlighted-green");
 
