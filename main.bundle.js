@@ -52,38 +52,6 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	// import $ from "jquery";
-	//
-	// class View {
-	//   constructor(containerId) {
-	//     this.$containerEl = $(`#${containerId}`);
-	//   }
-	//
-	//   render() {
-	//     return true;
-	//   }
-	//
-	//   createGameDivElement(content) {
-	//     const gameDivEl = document.createElement("div");
-	//     gameDivEl.className = "game";
-	//     gameDivEl.innerHTML = content;
-	//     return gameDivEl;
-	//   }
-	// }
-	//
-	// export default View;
-
-	// setInterval(function() {
-	//   var number=(Math.floor((Math.random() * 4) +  1));
-	//   // var id=(Math.floor((Math.random() * 9) +  1));
-	//
-	//   var cell= this.grid.cellArray[(Math.floor( (Math.random() * this.grid.cellArray.length) +  1) )];
-	//   var id= cell.id;
-	//   var colors = "highlighted" + "-" + number;
-	//
-	//   $("td" +"#" + id).attr('class', colors);
-	//
-	// }, 500);
 	"use strict";
 
 /***/ },
@@ -588,9 +556,7 @@
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
 
-	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {
-	        //do nothing stay on currentLevel
-	      } else {
+	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {} else {
 	        this.currentLevel = 1;
 	      }
 	    }
@@ -10774,8 +10740,6 @@
 	  _createClass(Grid, [{
 	    key: 'updateGridDimensions',
 	    value: function updateGridDimensions(levelData) {
-	      //update columns and rows
-	      //based on which level is being passed in
 	      if (levelData) {
 	        this.columns = levelData.columns;
 	        this.rows = levelData.rows;
@@ -11304,15 +11268,14 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	// 'use strict';
-	//
-	// const Config = {
-	//   columns:3,
-	//   rows:3,
-	// };
-	//
-	// module.exports = Config;
-	"use strict";
+	'use strict';
+
+	var Config = {
+	  columns: 3,
+	  rows: 3
+	};
+
+	module.exports = Config;
 
 /***/ },
 /* 15 */

@@ -186,9 +186,7 @@
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
 
-	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {
-	        //do nothing stay on currentLevel
-	      } else {
+	      if (confirm("Well, you managed to loose.... Wanna try again?") === true) {} else {
 	        this.currentLevel = 1;
 	      }
 	    }
@@ -10372,8 +10370,6 @@
 	  _createClass(Grid, [{
 	    key: 'updateGridDimensions',
 	    value: function updateGridDimensions(levelData) {
-	      //update columns and rows
-	      //based on which level is being passed in
 	      if (levelData) {
 	        this.columns = levelData.columns;
 	        this.rows = levelData.rows;
