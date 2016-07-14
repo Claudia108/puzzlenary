@@ -1,7 +1,8 @@
 body {
   background-color: darkseagreen;
 }
-
+/*fonts
+/////////////////////////////////////////*/
 .monoton {
   font-family: 'Monoton', cursive;
 }
@@ -15,18 +16,14 @@ body {
 }
 
 .monoton-huge {
-    margin-left: 236px;
-    font-family: 'Monoton', cursive;
-    /*font-size: 36px;*/
-    /*margin-top: 26px;*/
-    /*margin-bottom: 12px;*/
-    color: rgba(88, 59, 53, 0.77);
-    margin-top: 26px;
-    margin-bottom: -123px;
-    padding-top: 13px;
-    /* color: white; */
-    font-size: 79px;
-    z-index: -10;
+  margin-left: 236px;
+  font-family: 'Monoton', cursive;
+  color: rgba(88, 59, 53, 0.77);
+  margin-top: 26px;
+  margin-bottom: -123px;
+  padding-top: 13px;
+  font-size: 79px;
+  z-index: -10;
 }
 
 .galada {
@@ -83,11 +80,9 @@ body {
   margin-top: 0px;
 }
 
-.start-screen {
-  background-color: rgba(90, 171, 127, 0.84);
-  height: 500px;
-  width: 100%;
-  text-align: center;
+.instructions {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 h2 {
@@ -96,6 +91,13 @@ h2 {
   padding-top: 13px;
   color: white;
   font-size: 79px;
+}
+/*//////////////////////////////////////////////*/
+.start-screen {
+  background-color: rgba(90, 171, 127, 0.84);
+  height: 500px;
+  width: 100%;
+  text-align: center;
 }
 
 .start-button {
@@ -107,11 +109,6 @@ h2 {
   margin-top: 15px;
 }
 
-.instructions {
-  font-size: 25px;
-  font-weight: bold;
-}
-
 #container {
   width: 395px;
   height: 399px;
@@ -120,6 +117,22 @@ h2 {
   display: initial;
   z-index: -1;
   background-color: blue;
+}
+/*Images
+/////////////////////////////////////////*/
+.level-image {
+  width: 405px;
+  height: 400px;
+  margin-top: 144px;
+  margin-left: 46px;
+  box-shadow: 1px 1px 50px white;
+  position: absolute;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.background-image {
+  display: block;
 }
 
 .peaker {
@@ -152,7 +165,8 @@ h2 {
   margin-top: 10px;
   border-radius: 7px;
 }
-
+/*Scoreboard Section
+/////////////////////////////////////////*/
 .scoreboard{
   z-index: -4;
   float: right;
@@ -206,20 +220,8 @@ h2 {
   margin-left: 8px;
 }
 
-.level-image {
-  width: 405px;
-  height: 400px;
-  margin-top: 144px;
-  margin-left: 46px;
-  box-shadow: 1px 1px 50px white;
-  position: absolute;
-  overflow: hidden;
-  object-fit: contain;
-}
-
-.background-image {
-  display: block;
-}
+/*Table/Tiles*/
+/*/////////////////////////////////////////*/
 
 .game-table {
   position:relative;
@@ -273,6 +275,8 @@ h2 {
   background-color: orange;
 }
 
+/*Modals*/
+/*/////////////////////////////////////////*/
 .modal {
   display: none;
   position: fixed;
