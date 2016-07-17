@@ -235,18 +235,22 @@ h2 {
 
 .game-table td.highlighted-green {
   background-color: green;
+  /*box-shadow: inset 0 0 120px green;*/
 }
 
 .game-table td.highlighted-red {
   background-color: red;
+  /*box-shadow: inset 0 0 120px red;*/
 }
 
 .game-table td.highlighted-blue {
   background-color: blue;
+  /*box-shadow: inset 0 0 120px blue;*/
 }
 
 .game-table td.highlighted-purple {
   background-color: purple;
+
 }
 
 .game-table td.highlighted-yellow {
