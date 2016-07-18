@@ -466,6 +466,10 @@
 	var classToggler = __webpack_require__(12);
 	var events = __webpack_require__(13);
 	var gameLifeCycle = new events.EventEmitter();
+<<<<<<< HEAD
+=======
+	var resetGame = new events.EventEmitter();
+>>>>>>> master
 
 	var Game = function () {
 	  function Game(columns, rows) {
@@ -539,6 +543,13 @@
 	        self.handleOutcome(outcome);
 	        self.restart();
 	      });
+<<<<<<< HEAD
+=======
+
+	      document.addEventListener('reset-game', function (e) {
+	        self.playAgain(e.detail);
+	      });
+>>>>>>> master
 	    }
 	  }, {
 	    key: 'handleOutcome',
@@ -548,16 +559,30 @@
 	        (0, _jQuery2.default)('#winGameModal').show();
 	      } else {
 	        (0, _jQuery2.default)('#loseGameModal').show();
+<<<<<<< HEAD
 	        this.playAgain();
+=======
+	        // document.addEventListener('reset-game', function(e) {
+	        //   this.playAgain(e.detail);
+	        // });
+>>>>>>> master
 	      }
 	    }
 	  }, {
 	    key: 'playAgain',
+<<<<<<< HEAD
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
 
 	      if (confirm("Click 'Cancel' to restart the game. Click 'OK' to restart the level.") === true) {} else {
 	        this.currentLevel = 1;
+=======
+	    value: function playAgain(gameOutcome) {
+	      this.lives = this.resetLives();
+	      if (gameOutcome === "game") {
+	        this.currentLevel = 1;
+	        this.restart();
+>>>>>>> master
 	      }
 	    }
 	  }, {
@@ -10942,6 +10967,7 @@
 	function hide3Ponies() {
 	  hide2Ponies();
 	  document.querySelector('.lt1').style.visibility = 'hidden';
+<<<<<<< HEAD
 	}
 
 	function hideLifePonies(array) {
@@ -10954,6 +10980,20 @@
 	  }
 	}
 
+=======
+	}
+
+	function hideLifePonies(array) {
+	  if (array.length === 2) {
+	    hide1Pony();
+	  } else if (array.length === 1) {
+	    hide2Ponies();
+	  } else if (array.length === 0) {
+	    hide3Ponies();
+	  }
+	}
+
+>>>>>>> master
 	module.exports = classToggler;
 
 /***/ },
@@ -11289,10 +11329,16 @@
 	exports.startModalSetup = startModalSetup;
 	exports.winModalSetup = winModalSetup;
 	exports.loseModalSetup = loseModalSetup;
+<<<<<<< HEAD
+=======
+	// const eents = require('events');
+	// const resetame = new events.EventEmitter();
+>>>>>>> master
 	////////////////////////////////////////////
 	function startModalSetup() {
 
 	  var startModal = document.getElementById('startModal');
+<<<<<<< HEAD
 
 	  var closeStart = document.getElementsByClassName("closeStart")[0];
 
@@ -11305,6 +11351,20 @@
 	function winModalSetup() {
 	  var winModal = document.getElementById('winGameModal');
 
+=======
+
+	  var closeStart = document.getElementsByClassName("closeStart")[0];
+
+	  closeStart.onclick = function () {
+	    startModal.style.display = "none";
+	  };
+	}
+
+	////////////////////////////////////////////
+	function winModalSetup() {
+	  var winModal = document.getElementById('winGameModal');
+
+>>>>>>> master
 	  var closeWin = document.getElementsByClassName("closeWinGame")[0];
 
 	  closeWin.onclick = function () {
@@ -11312,6 +11372,7 @@
 	    resetPonies();
 	  };
 	}
+<<<<<<< HEAD
 
 	////////////////////////////////////////////
 	function loseModalSetup() {
@@ -11324,6 +11385,28 @@
 	  };
 	}
 
+=======
+
+	////////////////////////////////////////////
+	function loseModalSetup() {
+	  var endModal = document.getElementById('loseGameModal');
+
+	  var close1 = document.getElementsByClassName("closeLoseGame")[0];
+	  var close2 = document.getElementsByClassName("closeLoseGame")[1];
+
+	  close1.onclick = function () {
+	    endModal.style.display = "none";
+	    resetPonies();
+	    document.dispatchEvent(new CustomEvent('reset-game', { detail: 'level' }));
+	  };
+	  close2.onclick = function () {
+	    endModal.style.display = "none";
+	    resetPonies();
+	    document.dispatchEvent(new CustomEvent('reset-game', { detail: 'game' }));
+	  };
+	}
+
+>>>>>>> master
 	function resetPonies() {
 	  document.querySelector('.lt3').style.visibility = 'visible';
 	  document.querySelector('.lt2').style.visibility = 'visible';
