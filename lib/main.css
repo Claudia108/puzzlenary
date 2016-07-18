@@ -1,7 +1,8 @@
 body {
   background-color: darkseagreen;
 }
-
+/*fonts
+/////////////////////////////////////////*/
 .monoton {
   font-family: 'Monoton', cursive;
 }
@@ -12,8 +13,19 @@ body {
   margin-top: 26px;
   margin-bottom: 12px;
   color: #583b35;
-
 }
+
+.monoton-huge {
+  margin-left: 236px;
+  font-family: 'Monoton', cursive;
+  color: rgba(88, 59, 53, 0.77);
+  margin-top: 26px;
+  margin-bottom: -123px;
+  padding-top: 13px;
+  font-size: 79px;
+  z-index: -10;
+}
+
 .galada {
   font-family: 'Galada', cursive;
   font-size: 40px;
@@ -40,9 +52,7 @@ body {
 .level-info {
   font-family: 'Galada', cursive;
   font-size: 30px;
-  margin-top: 100px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-top: 68px;
   color: #583b35;
   text-align: center;
 }
@@ -70,11 +80,9 @@ body {
   margin-top: 0px;
 }
 
-.start-screen {
-  background-color: rgba(90, 171, 127, 0.84);
-  height: 500px;
-  width: 100%;
-  text-align: center;
+.instructions {
+  font-size: 25px;
+  font-weight: bold;
 }
 
 h2 {
@@ -83,6 +91,13 @@ h2 {
   padding-top: 13px;
   color: white;
   font-size: 79px;
+}
+/*//////////////////////////////////////////////*/
+.start-screen {
+  background-color: rgba(90, 171, 127, 0.84);
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .start-button {
@@ -94,11 +109,6 @@ h2 {
   margin-top: 15px;
 }
 
-.instructions {
-  font-size: 25px;
-  font-weight: bold;
-}
-
 #container {
   width: 395px;
   height: 399px;
@@ -108,17 +118,33 @@ h2 {
   z-index: -1;
   background-color: blue;
 }
+/*Images
+/////////////////////////////////////////*/
+.level-image {
+  width: 405px;
+  height: 400px;
+  margin-top: 144px;
+  margin-left: 46px;
+  box-shadow: 1px 1px 50px white;
+  position: absolute;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.background-image {
+  display: block;
+}
 
 .peaker {
   position: absolute;;
-  margin-left: 87px;
+  margin-left: 92px;
   z-index: -2;
-  top: 0px;
+  top: 54px;
   height: 500px;
 }
 
 .peaker img {
-  height: 500px;
+  height: 600px;
 }
 
 .pony {
@@ -139,11 +165,13 @@ h2 {
   margin-top: 10px;
   border-radius: 7px;
 }
-
+/*Scoreboard Section
+/////////////////////////////////////////*/
 .scoreboard{
   z-index: -4;
   float: right;
-  margin-top: 36px;  margin-right: 50px;
+  margin-top: 144px;
+  margin-right: 63px;
   margin-left: 50px;
   width: 300px;
   height: 150px;
@@ -192,23 +220,13 @@ h2 {
   margin-left: 8px;
 }
 
-.level-image {
-  width: 405px;
-  height: 400px;
-  margin-top: 18px;
-  box-shadow: 1px 1px 50px white;
-  position: absolute;
-  overflow: hidden;
-  object-fit: contain;
-}
-
-.background-image {
-  display: block;
-}
+/*Table/Tiles*/
+/*/////////////////////////////////////////*/
 
 .game-table {
   position:relative;
-  margin-left: 30%;
+  margin-left: 425px;
+  margin-top: 125px;
   border-collapse:collapse;
   width: 405px;
   height: 405px;
@@ -257,6 +275,8 @@ h2 {
   background-color: orange;
 }
 
+/*Modals*/
+/*/////////////////////////////////////////*/
 .modal {
   display: none;
   position: fixed;
