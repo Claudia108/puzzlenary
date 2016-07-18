@@ -58,7 +58,8 @@ describe('game', function () {
   });
 
   context('playAgain', function () {
-    it('resets lives to 3 lives', function () {
+    it('resets lives to 3 lives', function (done) {
+      this.timeout(0);
       const game = new Game(2, 2);
 
       game.start();
@@ -69,7 +70,7 @@ describe('game', function () {
       game.playAgain();
 
       expect(game.lives.length).to.equal(3);
-
+      done();
     });
   });
 
