@@ -76,11 +76,11 @@
 
 	var game = new _game2.default(_config2.default.columns, _config2.default.rows);
 	game.start();
+
 	(0, _modals.startModalSetup)();
 	(0, _modals.winModalSetup)();
 	(0, _modals.loseModalSetup)();
 
-	////////////////////////////////////////////
 	var startModal = document.getElementById('startModal');
 
 	window.onload = function () {
@@ -122,7 +122,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  background-color: darkseagreen;\n}\n\n.monoton {\n  font-family: 'Monoton', cursive;\n}\n\n.monoton-score {\n  font-family: 'Monoton', cursive;\n  font-size: 36px;\n  margin-top: 26px;\n  margin-bottom: 12px;\n  color: #583b35;\n\n}\n.galada {\n  font-family: 'Galada', cursive;\n  font-size: 40px;\n  margin-bottom: -11px;\n  margin-top: -19px;\n}\n\n#lives-galada {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: 4px;\n  color: #583b35;\n}\n\n#clicks-galada {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: -2px;\n  color: #583b35;\n}\n\n.level-info {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-top: 100px;\n  margin-left: 100px;\n  margin-right: 100px;\n  color: #583b35;\n  text-align: center;\n}\n\n#level-galada {\n  font-family: 'Monoton', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: 11px;\n  color: #583b35;\n  font-weight: bold;\n}\n\n.galada-intro-big {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: -50px;\n}\n\n.galada-intro-small {\n  font-family: 'Galada', cursive;\n  font-size: 20px;\n  margin-bottom: -11px;\n  margin-top: 0px;\n}\n\n.start-screen {\n  background-color: rgba(90, 171, 127, 0.84);\n  height: 500px;\n  width: 100%;\n  text-align: center;\n}\n\nh2 {\n  margin-top: 26px;\n  margin-bottom: -57px;\n  padding-top: 13px;\n  color: white;\n  font-size: 79px;\n}\n\n.start-button {\n  background-color: rgb(55, 54, 107);\n  color: white;\n  font-size: 2em;\n  padding: 8px;\n  border-radius: 7px;\n  margin-top: 15px;\n}\n\n.instructions {\n  font-size: 25px;\n  font-weight: bold;\n}\n\n#container {\n  width: 395px;\n  height: 399px;\n  position: relative;\n  margin-left: 30%;\n  display: initial;\n  z-index: -1;\n  background-color: blue;\n}\n\n.peaker {\n  position: absolute;;\n  margin-left: 87px;\n  z-index: -2;\n  top: 0px;\n  height: 500px;\n}\n\n.peaker img {\n  height: 500px;\n}\n\n.pony {\n  height: 258px;\n  padding-top: 21px;\n}\n\n#win-troll {\n  height: 281px;\n}\n\n#ra-pony {\n  width: 300px;\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 7px;\n}\n\n.scoreboard{\n  z-index: -4;\n  float: right;\n  margin-top: 36px;  margin-right: 50px;\n  margin-left: 50px;\n  width: 300px;\n  height: 150px;\n  text-align: center;\n}\n\n.lifeTrolls{\n  z-index: -4;\n  margin-left: 26px;\n  width: 225px;\n  height: 222px;\n  background-color: #b766ff;\n  padding: 10px;\n  border-style: solid;\n  border-color: #7c473c;\n  text-align: center;\n}\n\n.life_troll {\n  height: 75px;\n  margin-left: 27px;\n}\n\n.lt1 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-top: 19px;\n  margin-right: 23px;\n  margin-left: -69px;\n}\n\n.lt2 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-right: 13px;\n  margin-left: 11px;\n}\n\n.lt3 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-right: -1px;\n  margin-left: 8px;\n}\n\n.level-image {\n  width: 405px;\n  height: 400px;\n  margin-top: 18px;\n  box-shadow: 1px 1px 50px white;\n  position: absolute;\n  overflow: hidden;\n  object-fit: contain;\n}\n\n.background-image {\n  display: block;\n}\n\n.game-table {\n  position:relative;\n  margin-left: 30%;\n  border-collapse:collapse;\n  width: 405px;\n  height: 405px;\n  z-index: 1;\n  border-style: solid;\n  border-weight: 40px;\n  border-width: thick;\n  border-color: #583b35;\n}\n\n.game-table td {\n  cursor:pointer;\n  width:30px;\n  height:30px;\n  border:1px solid #ccc;\n  background-color: #b766ff;\n  text-align:center;\n  font-family:sans-serif;\n}\n\n.game-table td.highlighted-transparent {\n  background-color: transparent;\n}\n\n.game-table td.highlighted-green {\n  background-color: green;\n}\n\n.game-table td.highlighted-red {\n  background-color: red;\n}\n\n.game-table td.highlighted-blue {\n  background-color: blue;\n}\n\n.game-table td.highlighted-purple {\n  background-color: purple;\n}\n\n.game-table td.highlighted-yellow {\n  background-color: yellow;\n}\n\n.game-table td.highlighted-orange {\n  background-color: orange;\n}\n\n.modal {\n  display: none;\n  position: fixed;\n  z-index: 2;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0,0,0);\n  background-color: rgba(0,0,0,0.4);\n}\n\n.modal-content {\n  background-color: #fefefe;\n  margin: 15% auto;\n  padding: 20px;\n  border: 1px solid #888;\n  width: 80%;\n}\n\n.close {\n  color: #aaa;\n  font-size: 28px;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background-color: darkseagreen;\n}\n/*fonts\n/////////////////////////////////////////*/\n.monoton {\n  font-family: 'Monoton', cursive;\n}\n\n.monoton-score {\n  font-family: 'Monoton', cursive;\n  font-size: 36px;\n  margin-top: 26px;\n  margin-bottom: 12px;\n  color: #583b35;\n}\n\n.monoton-huge {\n  margin-left: 236px;\n  font-family: 'Monoton', cursive;\n  color: rgba(88, 59, 53, 0.77);\n  margin-top: 26px;\n  margin-bottom: -123px;\n  padding-top: 13px;\n  font-size: 79px;\n  z-index: -10;\n}\n\n.galada {\n  font-family: 'Galada', cursive;\n  font-size: 40px;\n  margin-bottom: -11px;\n  margin-top: -19px;\n}\n\n#lives-galada {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: 4px;\n  color: #583b35;\n}\n\n#clicks-galada {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: -2px;\n  color: #583b35;\n}\n\n.level-info {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-top: 68px;\n  color: #583b35;\n  text-align: center;\n}\n\n#level-galada {\n  font-family: 'Monoton', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: 11px;\n  color: #583b35;\n  font-weight: bold;\n}\n\n.galada-intro-big {\n  font-family: 'Galada', cursive;\n  font-size: 30px;\n  margin-bottom: -11px;\n  margin-top: -50px;\n}\n\n.galada-intro-small {\n  font-family: 'Galada', cursive;\n  font-size: 20px;\n  margin-bottom: -11px;\n  margin-top: 0px;\n}\n\n.instructions {\n  font-size: 25px;\n  font-weight: bold;\n}\n\nh2 {\n  margin-top: 26px;\n  margin-bottom: -57px;\n  padding-top: 13px;\n  color: white;\n  font-size: 79px;\n}\n/*//////////////////////////////////////////////*/\n.start-screen {\n  background-color: rgba(90, 171, 127, 0.84);\n  height: 100%;\n  width: 100%;\n  text-align: center;\n}\n\n.start-button {\n  background-color: rgb(55, 54, 107);\n  color: white;\n  font-size: 2em;\n  padding: 8px;\n  border-radius: 7px;\n  margin-top: 15px;\n}\n\n#container {\n  width: 395px;\n  height: 399px;\n  position: relative;\n  margin-left: 30%;\n  display: initial;\n  z-index: -1;\n  background-color: blue;\n}\n/*Images\n/////////////////////////////////////////*/\n.level-image {\n  width: 405px;\n  height: 400px;\n  margin-top: 144px;\n  margin-left: 46px;\n  box-shadow: 1px 1px 50px white;\n  position: absolute;\n  overflow: hidden;\n  object-fit: contain;\n}\n\n.background-image {\n  display: block;\n}\n\n.peaker {\n  position: absolute;;\n  margin-left: 92px;\n  z-index: -2;\n  top: 54px;\n  height: 500px;\n}\n\n.peaker img {\n  height: 600px;\n}\n\n.pony {\n  height: 258px;\n  padding-top: 21px;\n}\n\n#win-troll {\n  height: 281px;\n}\n\n#ra-pony {\n  width: 300px;\n  position: relative;\n  overflow: hidden;\n  display: block;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 7px;\n}\n/*Scoreboard Section\n/////////////////////////////////////////*/\n.scoreboard{\n  z-index: -4;\n  float: right;\n  margin-top: 144px;\n  margin-right: 63px;\n  margin-left: 50px;\n  width: 300px;\n  height: 150px;\n  text-align: center;\n}\n\n.lifeTrolls{\n  z-index: -4;\n  margin-left: 26px;\n  width: 225px;\n  height: 222px;\n  background-color: #b766ff;\n  padding: 10px;\n  border-style: solid;\n  border-color: #7c473c;\n  text-align: center;\n}\n\n.life_troll {\n  height: 75px;\n  margin-left: 27px;\n}\n\n.lt1 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-top: 19px;\n  margin-right: 23px;\n  margin-left: -69px;\n}\n\n.lt2 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-right: 13px;\n  margin-left: 11px;\n}\n\n.lt3 {\n  height: 50px;\n  width: 50px;\n  display: inline-block;\n  margin-right: -1px;\n  margin-left: 8px;\n}\n\n/*Table/Tiles*/\n/*/////////////////////////////////////////*/\n\n.game-table {\n  position:relative;\n  margin-left: 425px;\n  margin-top: 125px;\n  border-collapse:collapse;\n  width: 405px;\n  height: 405px;\n  z-index: 1;\n  border-style: solid;\n  border-weight: 40px;\n  border-width: thick;\n  border-color: #583b35;\n}\n\n.game-table td {\n  cursor:pointer;\n  width:30px;\n  height:30px;\n  border:1px solid #ccc;\n  background-color: #b766ff;\n  text-align:center;\n  font-family:sans-serif;\n}\n\n.game-table td.highlighted-transparent {\n  background-color: transparent;\n}\n\n.game-table td.highlighted-green {\n  background-color: green;\n}\n\n.game-table td.highlighted-red {\n  background-color: red;\n}\n\n.game-table td.highlighted-blue {\n  background-color: blue;\n}\n\n.game-table td.highlighted-purple {\n  background-color: purple;\n}\n\n.game-table td.highlighted-yellow {\n  background-color: yellow;\n}\n\n.game-table td.highlighted-orange {\n  background-color: orange;\n}\n\n/*Modals*/\n/*/////////////////////////////////////////*/\n.modal {\n  display: none;\n  position: fixed;\n  z-index: 2;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  overflow: auto;\n  background-color: rgb(0,0,0);\n  background-color: rgba(0,0,0,0.4);\n}\n\n.modal-content {\n  background-color: #fefefe;\n  margin: 15% auto;\n  padding: 20px;\n  border: 1px solid #888;\n  width: 80%;\n}\n\n.close {\n  color: #aaa;\n  font-size: 28px;\n}\n\n.close:hover,\n.close:focus {\n  color: black;\n  text-decoration: none;\n  cursor: pointer;\n}\n", ""]);
 
 	// exports
 
@@ -466,19 +466,15 @@
 	var classToggler = __webpack_require__(12);
 	var events = __webpack_require__(13);
 	var gameLifeCycle = new events.EventEmitter();
-<<<<<<< HEAD
-=======
-	var resetGame = new events.EventEmitter();
->>>>>>> master
 
 	var Game = function () {
 	  function Game(columns, rows) {
 	    _classCallCheck(this, Game);
 
-	    this.columns = columns;
-	    this.rows = rows;
 	    this.colorsArray = ["highlighted-green", "highlighted-red", "highlighted-blue", "highlighted-purple", "highlighted-yellow", "highlighted-orange"];
 	    this.currentLevel = 1;
+	    this.columns = columns;
+	    this.rows = rows;
 	    this.levelData = new _level2.default(this.currentLevel).data; //sets level of rows and columns
 	    this.grid = new _grid2.default({ columns: this.levelData.columns, rows: this.levelData.rows });
 	    this.lives = this.resetLives();
@@ -490,7 +486,6 @@
 	  _createClass(Game, [{
 	    key: 'scoreTracker',
 	    value: function scoreTracker() {
-	      console.log('number of clicks' + ' = ' + this.clicks);
 	      var livesSelector = document.querySelector('#clicks-galada');
 	      if (livesSelector) {
 	        livesSelector.innerHTML = "Score " + this.clicks;
@@ -500,7 +495,6 @@
 	  }, {
 	    key: 'levelTracker',
 	    value: function levelTracker() {
-	      console.log("this.currentLevel = " + this.currentLevel);
 	      var currentLevelSelector = document.querySelector('#level-galada');
 	      if (currentLevelSelector) {
 	        currentLevelSelector.innerHTML = "Level " + this.currentLevel;
@@ -538,18 +532,10 @@
 	        return callback(e, self);
 	      });
 	      gameLifeCycle.on("end-game", function (outcome) {
-	        console.log(outcome);
 	        self.levelTracker();
 	        self.handleOutcome(outcome);
 	        self.restart();
 	      });
-<<<<<<< HEAD
-=======
-
-	      document.addEventListener('reset-game', function (e) {
-	        self.playAgain(e.detail);
-	      });
->>>>>>> master
 	    }
 	  }, {
 	    key: 'handleOutcome',
@@ -559,30 +545,16 @@
 	        (0, _jQuery2.default)('#winGameModal').show();
 	      } else {
 	        (0, _jQuery2.default)('#loseGameModal').show();
-<<<<<<< HEAD
 	        this.playAgain();
-=======
-	        // document.addEventListener('reset-game', function(e) {
-	        //   this.playAgain(e.detail);
-	        // });
->>>>>>> master
 	      }
 	    }
 	  }, {
 	    key: 'playAgain',
-<<<<<<< HEAD
 	    value: function playAgain() {
 	      this.lives = this.resetLives();
 
-	      if (confirm("Click 'Cancel' to restart the game. Click 'OK' to restart the level.") === true) {} else {
+	      if (confirm("Click 'Cancel' to restart the game. Click 'OK' to restart the level.") === false) {
 	        this.currentLevel = 1;
-=======
-	    value: function playAgain(gameOutcome) {
-	      this.lives = this.resetLives();
-	      if (gameOutcome === "game") {
-	        this.currentLevel = 1;
-	        this.restart();
->>>>>>> master
 	      }
 	    }
 	  }, {
@@ -620,7 +592,6 @@
 	      this.clicks = 1;
 	      this.clearEvents();
 	      this.levelData = new _level2.default(this.currentLevel).data;
-	      // document.querySelector('.level-info').style.display = "none";
 	      (0, _jQuery2.default)('.game-table').remove();
 	      (0, _jQuery2.default)('.level-info').remove();
 	    }
@@ -644,7 +615,6 @@
 	        var id = cell.id;
 	        var colors = self.colorsArray[number];
 	        (0, _jQuery2.default)("td" + "#" + id).attr('class', colors);
-	        console.log("going");
 	      };
 	    }
 	  }]);
@@ -10864,7 +10834,6 @@
 	      return {
 	        columns: 4,
 	        rows: 4,
-
 	        invalidClicks: ["highlighted-red", "highlighted-blue"],
 	        levelPictures: "./assets/images/family_sq.jpg",
 	        levelInstructions: "Click all GREEN tiles to win level.  Colors of Death are: RED & BLUE"
@@ -10967,7 +10936,6 @@
 	function hide3Ponies() {
 	  hide2Ponies();
 	  document.querySelector('.lt1').style.visibility = 'hidden';
-<<<<<<< HEAD
 	}
 
 	function hideLifePonies(array) {
@@ -10980,20 +10948,6 @@
 	  }
 	}
 
-=======
-	}
-
-	function hideLifePonies(array) {
-	  if (array.length === 2) {
-	    hide1Pony();
-	  } else if (array.length === 1) {
-	    hide2Ponies();
-	  } else if (array.length === 0) {
-	    hide3Ponies();
-	  }
-	}
-
->>>>>>> master
 	module.exports = classToggler;
 
 /***/ },
@@ -11329,16 +11283,9 @@
 	exports.startModalSetup = startModalSetup;
 	exports.winModalSetup = winModalSetup;
 	exports.loseModalSetup = loseModalSetup;
-<<<<<<< HEAD
-=======
-	// const eents = require('events');
-	// const resetame = new events.EventEmitter();
->>>>>>> master
-	////////////////////////////////////////////
 	function startModalSetup() {
 
 	  var startModal = document.getElementById('startModal');
-<<<<<<< HEAD
 
 	  var closeStart = document.getElementsByClassName("closeStart")[0];
 
@@ -11347,24 +11294,9 @@
 	  };
 	}
 
-	////////////////////////////////////////////
 	function winModalSetup() {
 	  var winModal = document.getElementById('winGameModal');
 
-=======
-
-	  var closeStart = document.getElementsByClassName("closeStart")[0];
-
-	  closeStart.onclick = function () {
-	    startModal.style.display = "none";
-	  };
-	}
-
-	////////////////////////////////////////////
-	function winModalSetup() {
-	  var winModal = document.getElementById('winGameModal');
-
->>>>>>> master
 	  var closeWin = document.getElementsByClassName("closeWinGame")[0];
 
 	  closeWin.onclick = function () {
@@ -11372,9 +11304,7 @@
 	    resetPonies();
 	  };
 	}
-<<<<<<< HEAD
 
-	////////////////////////////////////////////
 	function loseModalSetup() {
 	  var endModal = document.getElementById('loseGameModal');
 	  var close = document.getElementsByClassName("closeLoseGame")[0];
@@ -11385,34 +11315,15 @@
 	  };
 	}
 
-=======
-
-	////////////////////////////////////////////
-	function loseModalSetup() {
-	  var endModal = document.getElementById('loseGameModal');
-
-	  var close1 = document.getElementsByClassName("closeLoseGame")[0];
-	  var close2 = document.getElementsByClassName("closeLoseGame")[1];
-
-	  close1.onclick = function () {
-	    endModal.style.display = "none";
-	    resetPonies();
-	    document.dispatchEvent(new CustomEvent('reset-game', { detail: 'level' }));
-	  };
-	  close2.onclick = function () {
-	    endModal.style.display = "none";
-	    resetPonies();
-	    document.dispatchEvent(new CustomEvent('reset-game', { detail: 'game' }));
-	  };
-	}
-
->>>>>>> master
 	function resetPonies() {
 	  document.querySelector('.lt3').style.visibility = 'visible';
 	  document.querySelector('.lt2').style.visibility = 'visible';
 	  document.querySelector('.lt1').style.visibility = 'visible';
 	}
-	module.exports = { startModalSetup: startModalSetup, winModalSetup: winModalSetup, loseModalSetup: loseModalSetup };
+
+	module.exports = { startModalSetup: startModalSetup,
+	  winModalSetup: winModalSetup,
+	  loseModalSetup: loseModalSetup };
 
 /***/ }
 /******/ ]);
