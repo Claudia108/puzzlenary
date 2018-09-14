@@ -19,6 +19,7 @@ To fire up a development server:
 ```
 npm start
 ```
+Play it: https://alirezaandersen.github.io/trollypoozleh/
 
 Once the server is running, you can visit:
 
